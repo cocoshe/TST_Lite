@@ -1,0 +1,1748 @@
+
+| epoch   1 |    10/   89 batches | lr 0.001000 | 827.77 ms | loss 0.16202
+| epoch   1 |    20/   89 batches | lr 0.001000 | 786.46 ms | loss 0.13044
+| epoch   1 |    30/   89 batches | lr 0.001000 | 789.73 ms | loss 0.09571
+| epoch   1 |    40/   89 batches | lr 0.001000 | 840.66 ms | loss 0.12325
+| epoch   1 |    50/   89 batches | lr 0.001000 | 885.35 ms | loss 0.10090
+| epoch   1 |    60/   89 batches | lr 0.001000 | 1696.63 ms | loss 0.07900
+| epoch   1 |    70/   89 batches | lr 0.001000 | 800.68 ms | loss 0.10635
+| epoch   1 |    80/   89 batches | lr 0.001000 | 874.02 ms | loss 0.08805
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 141.59s | valid loss 0.07924
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch   2 |    10/   89 batches | lr 0.001000 | 993.21 ms | loss 0.07273
+| epoch   2 |    20/   89 batches | lr 0.001000 | 924.92 ms | loss 0.06835
+| epoch   2 |    30/   89 batches | lr 0.001000 | 870.17 ms | loss 0.05097
+| epoch   2 |    40/   89 batches | lr 0.001000 | 1570.53 ms | loss 0.06030
+| epoch   2 |    50/   89 batches | lr 0.001000 | 1353.81 ms | loss 0.05161
+| epoch   2 |    60/   89 batches | lr 0.001000 | 970.94 ms | loss 0.04139
+| epoch   2 |    70/   89 batches | lr 0.001000 | 983.69 ms | loss 0.06800
+| epoch   2 |    80/   89 batches | lr 0.001000 | 942.36 ms | loss 0.05982
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch   2 | time: 135.85s | valid loss 0.05518
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch   3 |    10/   89 batches | lr 0.001000 | 853.98 ms | loss 0.04831
+| epoch   3 |    20/   89 batches | lr 0.001000 | 764.59 ms | loss 0.04553
+| epoch   3 |    30/   89 batches | lr 0.001000 | 731.53 ms | loss 0.03672
+| epoch   3 |    40/   89 batches | lr 0.001000 | 1580.01 ms | loss 0.03949
+| epoch   3 |    50/   89 batches | lr 0.001000 | 757.52 ms | loss 0.03713
+| epoch   3 |    60/   89 batches | lr 0.001000 | 878.96 ms | loss 0.02933
+| epoch   3 |    70/   89 batches | lr 0.001000 | 919.91 ms | loss 0.06278
+| epoch   3 |    80/   89 batches | lr 0.001000 | 931.80 ms | loss 0.05480
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch   3 | time: 127.69s | valid loss 0.04579
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch   4 |    10/   89 batches | lr 0.001000 | 960.31 ms | loss 0.04349
+| epoch   4 |    20/   89 batches | lr 0.001000 | 843.46 ms | loss 0.04267
+| epoch   4 |    30/   89 batches | lr 0.001000 | 897.68 ms | loss 0.03412
+| epoch   4 |    40/   89 batches | lr 0.001000 | 1850.62 ms | loss 0.03588
+| epoch   4 |    50/   89 batches | lr 0.001000 | 828.95 ms | loss 0.03519
+| epoch   4 |    60/   89 batches | lr 0.001000 | 854.78 ms | loss 0.02756
+| epoch   4 |    70/   89 batches | lr 0.001000 | 879.29 ms | loss 0.06180
+| epoch   4 |    80/   89 batches | lr 0.001000 | 865.81 ms | loss 0.05355
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9948320413436692
+precision:  1.0  recall:  0.9154929577464789  acc:  0.9989660520420472  f1:  0.9558823529411764
+-----------------------------------------------------------------------------------------
+| end of epoch   4 | time: 126.13s | valid loss 0.04454
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch   5 |    10/   89 batches | lr 0.001000 | 938.50 ms | loss 0.04222
+| epoch   5 |    20/   89 batches | lr 0.001000 | 880.75 ms | loss 0.04126
+| epoch   5 |    30/   89 batches | lr 0.001000 | 1356.43 ms | loss 0.03201
+| epoch   5 |    40/   89 batches | lr 0.001000 | 812.47 ms | loss 0.03362
+| epoch   5 |    50/   89 batches | lr 0.001000 | 948.65 ms | loss 0.03375
+| epoch   5 |    60/   89 batches | lr 0.001000 | 883.40 ms | loss 0.02639
+| epoch   5 |    70/   89 batches | lr 0.001000 | 845.32 ms | loss 0.06139
+| epoch   5 |    80/   89 batches | lr 0.001000 | 851.91 ms | loss 0.05293
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch   5 | time: 127.59s | valid loss 0.04342
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch   6 |    10/   89 batches | lr 0.001000 | 844.33 ms | loss 0.04135
+| epoch   6 |    20/   89 batches | lr 0.001000 | 1601.08 ms | loss 0.04009
+| epoch   6 |    30/   89 batches | lr 0.001000 | 785.43 ms | loss 0.03047
+| epoch   6 |    40/   89 batches | lr 0.001000 | 815.75 ms | loss 0.03199
+| epoch   6 |    50/   89 batches | lr 0.001000 | 823.85 ms | loss 0.03235
+| epoch   6 |    60/   89 batches | lr 0.001000 | 789.19 ms | loss 0.02524
+| epoch   6 |    70/   89 batches | lr 0.001000 | 756.27 ms | loss 0.06050
+| epoch   6 |    80/   89 batches | lr 0.001000 | 794.82 ms | loss 0.05214
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9931093884582257
+precision:  1.0  recall:  0.8873239436619719  acc:  0.9986214027227296  f1:  0.9402985074626865
+-----------------------------------------------------------------------------------------
+| end of epoch   6 | time: 121.06s | valid loss 0.04209
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch   7 |    10/   89 batches | lr 0.001000 | 1305.42 ms | loss 0.04026
+| epoch   7 |    20/   89 batches | lr 0.001000 | 1239.50 ms | loss 0.03881
+| epoch   7 |    30/   89 batches | lr 0.001000 | 788.27 ms | loss 0.02928
+| epoch   7 |    40/   89 batches | lr 0.001000 | 834.14 ms | loss 0.03042
+| epoch   7 |    50/   89 batches | lr 0.001000 | 833.02 ms | loss 0.03055
+| epoch   7 |    60/   89 batches | lr 0.001000 | 830.72 ms | loss 0.02410
+| epoch   7 |    70/   89 batches | lr 0.001000 | 850.62 ms | loss 0.05918
+| epoch   7 |    80/   89 batches | lr 0.001000 | 855.03 ms | loss 0.05103
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch   7 | time: 126.67s | valid loss 0.04111
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch   8 |    10/   89 batches | lr 0.001000 | 1563.15 ms | loss 0.03912
+| epoch   8 |    20/   89 batches | lr 0.001000 | 815.59 ms | loss 0.03767
+| epoch   8 |    30/   89 batches | lr 0.001000 | 856.57 ms | loss 0.02816
+| epoch   8 |    40/   89 batches | lr 0.001000 | 850.75 ms | loss 0.02904
+| epoch   8 |    50/   89 batches | lr 0.001000 | 879.71 ms | loss 0.02928
+| epoch   8 |    60/   89 batches | lr 0.001000 | 808.41 ms | loss 0.02331
+| epoch   8 |    70/   89 batches | lr 0.001000 | 846.63 ms | loss 0.05818
+| epoch   8 |    80/   89 batches | lr 0.001000 | 971.51 ms | loss 0.05000
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9948320413436692
+precision:  1.0  recall:  0.9154929577464789  acc:  0.9989660520420472  f1:  0.9558823529411764
+-----------------------------------------------------------------------------------------
+| end of epoch   8 | time: 133.49s | valid loss 0.04098
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch   9 |    10/   89 batches | lr 0.000950 | 2758.92 ms | loss 0.03855
+| epoch   9 |    20/   89 batches | lr 0.000950 | 880.29 ms | loss 0.03678
+| epoch   9 |    30/   89 batches | lr 0.000950 | 871.12 ms | loss 0.02714
+| epoch   9 |    40/   89 batches | lr 0.000950 | 912.64 ms | loss 0.02813
+| epoch   9 |    50/   89 batches | lr 0.000950 | 967.03 ms | loss 0.02827
+| epoch   9 |    60/   89 batches | lr 0.000950 | 994.06 ms | loss 0.02278
+| epoch   9 |    70/   89 batches | lr 0.000950 | 974.04 ms | loss 0.05753
+| epoch   9 |    80/   89 batches | lr 0.000950 | 985.73 ms | loss 0.04962
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9948320413436692
+precision:  1.0  recall:  0.9154929577464789  acc:  0.9989660520420472  f1:  0.9558823529411764
+-----------------------------------------------------------------------------------------
+| end of epoch   9 | time: 156.21s | valid loss 0.04011
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  10 |    10/   89 batches | lr 0.000950 | 1014.97 ms | loss 0.03796
+| epoch  10 |    20/   89 batches | lr 0.000950 | 853.93 ms | loss 0.03634
+| epoch  10 |    30/   89 batches | lr 0.000950 | 864.93 ms | loss 0.02654
+| epoch  10 |    40/   89 batches | lr 0.000950 | 1857.83 ms | loss 0.02754
+| epoch  10 |    50/   89 batches | lr 0.000950 | 830.99 ms | loss 0.02758
+| epoch  10 |    60/   89 batches | lr 0.000950 | 834.67 ms | loss 0.02234
+| epoch  10 |    70/   89 batches | lr 0.000950 | 828.35 ms | loss 0.05683
+| epoch  10 |    80/   89 batches | lr 0.000950 | 832.36 ms | loss 0.04931
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9948320413436692
+precision:  1.0  recall:  0.9154929577464789  acc:  0.9989660520420472  f1:  0.9558823529411764
+-----------------------------------------------------------------------------------------
+| end of epoch  10 | time: 138.15s | valid loss 0.03989
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  11 |    10/   89 batches | lr 0.000950 | 1003.00 ms | loss 0.03770
+| epoch  11 |    20/   89 batches | lr 0.000950 | 936.23 ms | loss 0.03586
+| epoch  11 |    30/   89 batches | lr 0.000950 | 922.22 ms | loss 0.02616
+| epoch  11 |    40/   89 batches | lr 0.000950 | 1986.65 ms | loss 0.02725
+| epoch  11 |    50/   89 batches | lr 0.000950 | 887.86 ms | loss 0.02714
+| epoch  11 |    60/   89 batches | lr 0.000950 | 924.67 ms | loss 0.02200
+| epoch  11 |    70/   89 batches | lr 0.000950 | 927.07 ms | loss 0.05627
+| epoch  11 |    80/   89 batches | lr 0.000950 | 911.06 ms | loss 0.04918
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9948320413436692
+precision:  1.0  recall:  0.9154929577464789  acc:  0.9989660520420472  f1:  0.9558823529411764
+-----------------------------------------------------------------------------------------
+| end of epoch  11 | time: 139.88s | valid loss 0.03975
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  12 |    10/   89 batches | lr 0.000950 | 906.98 ms | loss 0.03735
+| epoch  12 |    20/   89 batches | lr 0.000950 | 828.07 ms | loss 0.03544
+| epoch  12 |    30/   89 batches | lr 0.000950 | 832.56 ms | loss 0.02588
+| epoch  12 |    40/   89 batches | lr 0.000950 | 1497.69 ms | loss 0.02695
+| epoch  12 |    50/   89 batches | lr 0.000950 | 798.65 ms | loss 0.02674
+| epoch  12 |    60/   89 batches | lr 0.000950 | 853.73 ms | loss 0.02177
+| epoch  12 |    70/   89 batches | lr 0.000950 | 839.23 ms | loss 0.05563
+| epoch  12 |    80/   89 batches | lr 0.000950 | 869.68 ms | loss 0.04902
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch  12 | time: 150.76s | valid loss 0.03989
+-----------------------------------------------------------------------------------------
+| epoch  13 |    10/   89 batches | lr 0.000950 | 1090.07 ms | loss 0.03722
+| epoch  13 |    20/   89 batches | lr 0.000950 | 937.71 ms | loss 0.03505
+| epoch  13 |    30/   89 batches | lr 0.000950 | 924.91 ms | loss 0.02571
+| epoch  13 |    40/   89 batches | lr 0.000950 | 2358.16 ms | loss 0.02666
+| epoch  13 |    50/   89 batches | lr 0.000950 | 903.04 ms | loss 0.02650
+| epoch  13 |    60/   89 batches | lr 0.000950 | 982.59 ms | loss 0.02142
+| epoch  13 |    70/   89 batches | lr 0.000950 | 955.52 ms | loss 0.05487
+| epoch  13 |    80/   89 batches | lr 0.000950 | 986.17 ms | loss 0.04873
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9922480620155039
+precision:  1.0  recall:  0.8732394366197183  acc:  0.9984490780630708  f1:  0.9323308270676691
+-----------------------------------------------------------------------------------------
+| end of epoch  13 | time: 152.34s | valid loss 0.04022
+-----------------------------------------------------------------------------------------
+| epoch  14 |    10/   89 batches | lr 0.000950 | 926.05 ms | loss 0.03704
+| epoch  14 |    20/   89 batches | lr 0.000950 | 870.71 ms | loss 0.03495
+| epoch  14 |    30/   89 batches | lr 0.000950 | 846.56 ms | loss 0.02546
+| epoch  14 |    40/   89 batches | lr 0.000950 | 1746.44 ms | loss 0.02645
+| epoch  14 |    50/   89 batches | lr 0.000950 | 921.84 ms | loss 0.02629
+| epoch  14 |    60/   89 batches | lr 0.000950 | 831.05 ms | loss 0.02113
+| epoch  14 |    70/   89 batches | lr 0.000950 | 875.35 ms | loss 0.05416
+| epoch  14 |    80/   89 batches | lr 0.000950 | 866.45 ms | loss 0.04840
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9870801033591732
+precision:  1.0  recall:  0.7887323943661971  acc:  0.9974151301051181  f1:  0.8818897637795275
+-----------------------------------------------------------------------------------------
+| end of epoch  14 | time: 162.57s | valid loss 0.04075
+-----------------------------------------------------------------------------------------
+| epoch  15 |    10/   89 batches | lr 0.000950 | 1268.89 ms | loss 0.03689
+| epoch  15 |    20/   89 batches | lr 0.000950 | 1247.03 ms | loss 0.03520
+| epoch  15 |    30/   89 batches | lr 0.000950 | 1172.00 ms | loss 0.02553
+| epoch  15 |    40/   89 batches | lr 0.000950 | 1022.35 ms | loss 0.02637
+| epoch  15 |    50/   89 batches | lr 0.000950 | 1585.42 ms | loss 0.02615
+| epoch  15 |    60/   89 batches | lr 0.000950 | 2319.12 ms | loss 0.02096
+| epoch  15 |    70/   89 batches | lr 0.000950 | 974.30 ms | loss 0.05370
+| epoch  15 |    80/   89 batches | lr 0.000950 | 954.23 ms | loss 0.04811
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch  15 | time: 192.67s | valid loss 0.04159
+-----------------------------------------------------------------------------------------
+| epoch  16 |    10/   89 batches | lr 0.000950 | 918.02 ms | loss 0.03686
+| epoch  16 |    20/   89 batches | lr 0.000950 | 861.82 ms | loss 0.03561
+| epoch  16 |    30/   89 batches | lr 0.000950 | 895.60 ms | loss 0.02565
+| epoch  16 |    40/   89 batches | lr 0.000950 | 856.52 ms | loss 0.02625
+| epoch  16 |    50/   89 batches | lr 0.000950 | 1742.80 ms | loss 0.02594
+| epoch  16 |    60/   89 batches | lr 0.000950 | 1680.56 ms | loss 0.02076
+| epoch  16 |    70/   89 batches | lr 0.000950 | 873.77 ms | loss 0.05359
+| epoch  16 |    80/   89 batches | lr 0.000950 | 939.12 ms | loss 0.04786
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9896640826873385
+precision:  1.0  recall:  0.8309859154929577  acc:  0.9979321040840944  f1:  0.9076923076923077
+-----------------------------------------------------------------------------------------
+| end of epoch  16 | time: 150.39s | valid loss 0.04205
+-----------------------------------------------------------------------------------------
+| epoch  17 |    10/   89 batches | lr 0.000902 | 1125.97 ms | loss 0.03700
+| epoch  17 |    20/   89 batches | lr 0.000902 | 958.89 ms | loss 0.03679
+| epoch  17 |    30/   89 batches | lr 0.000902 | 934.63 ms | loss 0.02638
+| epoch  17 |    40/   89 batches | lr 0.000902 | 951.28 ms | loss 0.02650
+| epoch  17 |    50/   89 batches | lr 0.000902 | 962.90 ms | loss 0.02598
+| epoch  17 |    60/   89 batches | lr 0.000902 | 944.89 ms | loss 0.02074
+| epoch  17 |    70/   89 batches | lr 0.000902 | 2019.24 ms | loss 0.05354
+| epoch  17 |    80/   89 batches | lr 0.000902 | 875.46 ms | loss 0.04757
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch  17 | time: 153.89s | valid loss 0.04177
+-----------------------------------------------------------------------------------------
+| epoch  18 |    10/   89 batches | lr 0.000902 | 918.48 ms | loss 0.03692
+| epoch  18 |    20/   89 batches | lr 0.000902 | 828.69 ms | loss 0.03692
+| epoch  18 |    30/   89 batches | lr 0.000902 | 849.81 ms | loss 0.02660
+| epoch  18 |    40/   89 batches | lr 0.000902 | 841.08 ms | loss 0.02682
+| epoch  18 |    50/   89 batches | lr 0.000902 | 1069.35 ms | loss 0.02592
+| epoch  18 |    60/   89 batches | lr 0.000902 | 1662.02 ms | loss 0.02076
+| epoch  18 |    70/   89 batches | lr 0.000902 | 828.18 ms | loss 0.05374
+| epoch  18 |    80/   89 batches | lr 0.000902 | 907.58 ms | loss 0.04734
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9888027562446167
+precision:  1.0  recall:  0.8169014084507042  acc:  0.9977597794244356  f1:  0.8992248062015504
+-----------------------------------------------------------------------------------------
+| end of epoch  18 | time: 139.91s | valid loss 0.04112
+-----------------------------------------------------------------------------------------
+| epoch  19 |    10/   89 batches | lr 0.000902 | 1002.09 ms | loss 0.03705
+| epoch  19 |    20/   89 batches | lr 0.000902 | 918.52 ms | loss 0.03735
+| epoch  19 |    30/   89 batches | lr 0.000902 | 944.22 ms | loss 0.02723
+| epoch  19 |    40/   89 batches | lr 0.000902 | 923.90 ms | loss 0.02709
+| epoch  19 |    50/   89 batches | lr 0.000902 | 919.49 ms | loss 0.02644
+| epoch  19 |    60/   89 batches | lr 0.000902 | 1749.11 ms | loss 0.02084
+| epoch  19 |    70/   89 batches | lr 0.000902 | 1192.82 ms | loss 0.05386
+| epoch  19 |    80/   89 batches | lr 0.000902 | 792.07 ms | loss 0.04728
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch  19 | time: 157.80s | valid loss 0.03999
+-----------------------------------------------------------------------------------------
+| epoch  20 |    10/   89 batches | lr 0.000902 | 895.79 ms | loss 0.03674
+| epoch  20 |    20/   89 batches | lr 0.000902 | 830.35 ms | loss 0.03648
+| epoch  20 |    30/   89 batches | lr 0.000902 | 1018.49 ms | loss 0.02702
+| epoch  20 |    40/   89 batches | lr 0.000902 | 881.96 ms | loss 0.02661
+| epoch  20 |    50/   89 batches | lr 0.000902 | 839.58 ms | loss 0.02614
+| epoch  20 |    60/   89 batches | lr 0.000902 | 2137.54 ms | loss 0.02067
+| epoch  20 |    70/   89 batches | lr 0.000902 | 960.64 ms | loss 0.05395
+| epoch  20 |    80/   89 batches | lr 0.000902 | 973.08 ms | loss 0.04685
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch  20 | time: 167.95s | valid loss 0.03906
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  21 |    10/   89 batches | lr 0.000902 | 945.93 ms | loss 0.03654
+| epoch  21 |    20/   89 batches | lr 0.000902 | 870.20 ms | loss 0.03596
+| epoch  21 |    30/   89 batches | lr 0.000902 | 908.06 ms | loss 0.02700
+| epoch  21 |    40/   89 batches | lr 0.000902 | 922.74 ms | loss 0.02662
+| epoch  21 |    50/   89 batches | lr 0.000902 | 1078.46 ms | loss 0.02628
+| epoch  21 |    60/   89 batches | lr 0.000902 | 2117.02 ms | loss 0.02056
+| epoch  21 |    70/   89 batches | lr 0.000902 | 885.39 ms | loss 0.05412
+| epoch  21 |    80/   89 batches | lr 0.000902 | 893.77 ms | loss 0.04693
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9896640826873385
+precision:  1.0  recall:  0.8309859154929577  acc:  0.9979321040840944  f1:  0.9076923076923077
+-----------------------------------------------------------------------------------------
+| end of epoch  21 | time: 155.48s | valid loss 0.03823
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  22 |    10/   89 batches | lr 0.000902 | 869.22 ms | loss 0.03609
+| epoch  22 |    20/   89 batches | lr 0.000902 | 820.58 ms | loss 0.03549
+| epoch  22 |    30/   89 batches | lr 0.000902 | 818.21 ms | loss 0.02654
+| epoch  22 |    40/   89 batches | lr 0.000902 | 799.02 ms | loss 0.02602
+| epoch  22 |    50/   89 batches | lr 0.000902 | 1624.44 ms | loss 0.02597
+| epoch  22 |    60/   89 batches | lr 0.000902 | 775.67 ms | loss 0.02058
+| epoch  22 |    70/   89 batches | lr 0.000902 | 826.26 ms | loss 0.05402
+| epoch  22 |    80/   89 batches | lr 0.000902 | 875.40 ms | loss 0.04655
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9879414298018949
+precision:  0.9830508474576272  recall:  0.8169014084507042  acc:  0.9975874547647768  f1:  0.8923076923076924
+-----------------------------------------------------------------------------------------
+| end of epoch  22 | time: 133.98s | valid loss 0.03768
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  23 |    10/   89 batches | lr 0.000902 | 933.82 ms | loss 0.03594
+| epoch  23 |    20/   89 batches | lr 0.000902 | 832.85 ms | loss 0.03535
+| epoch  23 |    30/   89 batches | lr 0.000902 | 846.31 ms | loss 0.02664
+| epoch  23 |    40/   89 batches | lr 0.000902 | 818.83 ms | loss 0.02598
+| epoch  23 |    50/   89 batches | lr 0.000902 | 848.96 ms | loss 0.02631
+| epoch  23 |    60/   89 batches | lr 0.000902 | 2722.95 ms | loss 0.02058
+| epoch  23 |    70/   89 batches | lr 0.000902 | 802.46 ms | loss 0.05420
+| epoch  23 |    80/   89 batches | lr 0.000902 | 772.84 ms | loss 0.04666
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9870801033591732
+precision:  1.0  recall:  0.7887323943661971  acc:  0.9974151301051181  f1:  0.8818897637795275
+-----------------------------------------------------------------------------------------
+| end of epoch  23 | time: 158.74s | valid loss 0.03707
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  24 |    10/   89 batches | lr 0.000902 | 889.18 ms | loss 0.03565
+| epoch  24 |    20/   89 batches | lr 0.000902 | 811.92 ms | loss 0.03452
+| epoch  24 |    30/   89 batches | lr 0.000902 | 830.83 ms | loss 0.02622
+| epoch  24 |    40/   89 batches | lr 0.000902 | 792.01 ms | loss 0.02557
+| epoch  24 |    50/   89 batches | lr 0.000902 | 812.41 ms | loss 0.02612
+| epoch  24 |    60/   89 batches | lr 0.000902 | 1631.24 ms | loss 0.02063
+| epoch  24 |    70/   89 batches | lr 0.000902 | 817.98 ms | loss 0.05408
+| epoch  24 |    80/   89 batches | lr 0.000902 | 806.07 ms | loss 0.04632
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9870801033591732
+precision:  1.0  recall:  0.7887323943661971  acc:  0.9974151301051181  f1:  0.8818897637795275
+-----------------------------------------------------------------------------------------
+| end of epoch  24 | time: 145.37s | valid loss 0.03677
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  25 |    10/   89 batches | lr 0.000857 | 909.12 ms | loss 0.03545
+| epoch  25 |    20/   89 batches | lr 0.000857 | 821.36 ms | loss 0.03451
+| epoch  25 |    30/   89 batches | lr 0.000857 | 830.91 ms | loss 0.02613
+| epoch  25 |    40/   89 batches | lr 0.000857 | 840.72 ms | loss 0.02565
+| epoch  25 |    50/   89 batches | lr 0.000857 | 2059.50 ms | loss 0.02642
+| epoch  25 |    60/   89 batches | lr 0.000857 | 795.42 ms | loss 0.02077
+| epoch  25 |    70/   89 batches | lr 0.000857 | 858.79 ms | loss 0.05430
+| epoch  25 |    80/   89 batches | lr 0.000857 | 832.48 ms | loss 0.04650
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9879414298018949
+precision:  1.0  recall:  0.8028169014084507  acc:  0.9975874547647768  f1:  0.890625
+-----------------------------------------------------------------------------------------
+| end of epoch  25 | time: 134.26s | valid loss 0.03591
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  26 |    10/   89 batches | lr 0.000857 | 896.31 ms | loss 0.03511
+| epoch  26 |    20/   89 batches | lr 0.000857 | 832.89 ms | loss 0.03371
+| epoch  26 |    30/   89 batches | lr 0.000857 | 825.31 ms | loss 0.02548
+| epoch  26 |    40/   89 batches | lr 0.000857 | 813.03 ms | loss 0.02526
+| epoch  26 |    50/   89 batches | lr 0.000857 | 1896.98 ms | loss 0.02607
+| epoch  26 |    60/   89 batches | lr 0.000857 | 800.90 ms | loss 0.02073
+| epoch  26 |    70/   89 batches | lr 0.000857 | 778.50 ms | loss 0.05395
+| epoch  26 |    80/   89 batches | lr 0.000857 | 809.25 ms | loss 0.04613
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9870801033591732
+precision:  1.0  recall:  0.7887323943661971  acc:  0.9974151301051181  f1:  0.8818897637795275
+-----------------------------------------------------------------------------------------
+| end of epoch  26 | time: 158.54s | valid loss 0.03587
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  27 |    10/   89 batches | lr 0.000857 | 1002.75 ms | loss 0.03479
+| epoch  27 |    20/   89 batches | lr 0.000857 | 890.07 ms | loss 0.03358
+| epoch  27 |    30/   89 batches | lr 0.000857 | 905.83 ms | loss 0.02544
+| epoch  27 |    40/   89 batches | lr 0.000857 | 1010.59 ms | loss 0.02512
+| epoch  27 |    50/   89 batches | lr 0.000857 | 1965.19 ms | loss 0.02624
+| epoch  27 |    60/   89 batches | lr 0.000857 | 878.10 ms | loss 0.02071
+| epoch  27 |    70/   89 batches | lr 0.000857 | 810.06 ms | loss 0.05378
+| epoch  27 |    80/   89 batches | lr 0.000857 | 802.21 ms | loss 0.04622
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9870801033591732
+precision:  1.0  recall:  0.7887323943661971  acc:  0.9974151301051181  f1:  0.8818897637795275
+-----------------------------------------------------------------------------------------
+| end of epoch  27 | time: 164.35s | valid loss 0.03546
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  28 |    10/   89 batches | lr 0.000857 | 920.60 ms | loss 0.03463
+| epoch  28 |    20/   89 batches | lr 0.000857 | 827.17 ms | loss 0.03279
+| epoch  28 |    30/   89 batches | lr 0.000857 | 962.25 ms | loss 0.02484
+| epoch  28 |    40/   89 batches | lr 0.000857 | 1050.44 ms | loss 0.02478
+| epoch  28 |    50/   89 batches | lr 0.000857 | 1171.18 ms | loss 0.02580
+| epoch  28 |    60/   89 batches | lr 0.000857 | 1238.20 ms | loss 0.02053
+| epoch  28 |    70/   89 batches | lr 0.000857 | 1986.12 ms | loss 0.05348
+| epoch  28 |    80/   89 batches | lr 0.000857 | 876.75 ms | loss 0.04571
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch  28 | time: 175.41s | valid loss 0.03522
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  29 |    10/   89 batches | lr 0.000857 | 971.72 ms | loss 0.03433
+| epoch  29 |    20/   89 batches | lr 0.000857 | 924.34 ms | loss 0.03259
+| epoch  29 |    30/   89 batches | lr 0.000857 | 854.65 ms | loss 0.02490
+| epoch  29 |    40/   89 batches | lr 0.000857 | 888.81 ms | loss 0.02474
+| epoch  29 |    50/   89 batches | lr 0.000857 | 2089.35 ms | loss 0.02587
+| epoch  29 |    60/   89 batches | lr 0.000857 | 892.13 ms | loss 0.02048
+| epoch  29 |    70/   89 batches | lr 0.000857 | 836.83 ms | loss 0.05328
+| epoch  29 |    80/   89 batches | lr 0.000857 | 855.04 ms | loss 0.04575
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9879414298018949
+precision:  1.0  recall:  0.8028169014084507  acc:  0.9975874547647768  f1:  0.890625
+-----------------------------------------------------------------------------------------
+| end of epoch  29 | time: 151.51s | valid loss 0.03475
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  30 |    10/   89 batches | lr 0.000857 | 1232.90 ms | loss 0.03410
+| epoch  30 |    20/   89 batches | lr 0.000857 | 1049.26 ms | loss 0.03201
+| epoch  30 |    30/   89 batches | lr 0.000857 | 972.67 ms | loss 0.02431
+| epoch  30 |    40/   89 batches | lr 0.000857 | 995.12 ms | loss 0.02439
+| epoch  30 |    50/   89 batches | lr 0.000857 | 813.27 ms | loss 0.02544
+| epoch  30 |    60/   89 batches | lr 0.000857 | 899.29 ms | loss 0.02035
+| epoch  30 |    70/   89 batches | lr 0.000857 | 1863.16 ms | loss 0.05310
+| epoch  30 |    80/   89 batches | lr 0.000857 | 799.12 ms | loss 0.04532
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9879414298018949
+precision:  0.9830508474576272  recall:  0.8169014084507042  acc:  0.9975874547647768  f1:  0.8923076923076924
+-----------------------------------------------------------------------------------------
+| end of epoch  30 | time: 148.93s | valid loss 0.03479
+-----------------------------------------------------------------------------------------
+| epoch  31 |    10/   89 batches | lr 0.000857 | 896.50 ms | loss 0.03403
+| epoch  31 |    20/   89 batches | lr 0.000857 | 788.10 ms | loss 0.03201
+| epoch  31 |    30/   89 batches | lr 0.000857 | 768.16 ms | loss 0.02467
+| epoch  31 |    40/   89 batches | lr 0.000857 | 835.83 ms | loss 0.02435
+| epoch  31 |    50/   89 batches | lr 0.000857 | 917.85 ms | loss 0.02548
+| epoch  31 |    60/   89 batches | lr 0.000857 | 846.04 ms | loss 0.02012
+| epoch  31 |    70/   89 batches | lr 0.000857 | 2108.33 ms | loss 0.05284
+| epoch  31 |    80/   89 batches | lr 0.000857 | 1113.47 ms | loss 0.04542
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9870801033591732
+precision:  1.0  recall:  0.7887323943661971  acc:  0.9974151301051181  f1:  0.8818897637795275
+-----------------------------------------------------------------------------------------
+| end of epoch  31 | time: 159.52s | valid loss 0.03406
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  32 |    10/   89 batches | lr 0.000857 | 1133.93 ms | loss 0.03371
+| epoch  32 |    20/   89 batches | lr 0.000857 | 1023.92 ms | loss 0.03113
+| epoch  32 |    30/   89 batches | lr 0.000857 | 1005.79 ms | loss 0.02395
+| epoch  32 |    40/   89 batches | lr 0.000857 | 939.27 ms | loss 0.02406
+| epoch  32 |    50/   89 batches | lr 0.000857 | 989.65 ms | loss 0.02509
+| epoch  32 |    60/   89 batches | lr 0.000857 | 1015.95 ms | loss 0.02000
+| epoch  32 |    70/   89 batches | lr 0.000857 | 966.80 ms | loss 0.05271
+| epoch  32 |    80/   89 batches | lr 0.000857 | 2405.26 ms | loss 0.04490
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9870801033591732
+precision:  1.0  recall:  0.7887323943661971  acc:  0.9974151301051181  f1:  0.8818897637795275
+-----------------------------------------------------------------------------------------
+| end of epoch  32 | time: 167.31s | valid loss 0.03400
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  33 |    10/   89 batches | lr 0.000815 | 927.02 ms | loss 0.03364
+| epoch  33 |    20/   89 batches | lr 0.000815 | 851.52 ms | loss 0.03103
+| epoch  33 |    30/   89 batches | lr 0.000815 | 1106.66 ms | loss 0.02438
+| epoch  33 |    40/   89 batches | lr 0.000815 | 973.53 ms | loss 0.02414
+| epoch  33 |    50/   89 batches | lr 0.000815 | 975.28 ms | loss 0.02529
+| epoch  33 |    60/   89 batches | lr 0.000815 | 944.98 ms | loss 0.02012
+| epoch  33 |    70/   89 batches | lr 0.000815 | 916.89 ms | loss 0.05246
+| epoch  33 |    80/   89 batches | lr 0.000815 | 922.94 ms | loss 0.04502
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9870801033591732
+precision:  1.0  recall:  0.7887323943661971  acc:  0.9974151301051181  f1:  0.8818897637795275
+-----------------------------------------------------------------------------------------
+| end of epoch  33 | time: 158.69s | valid loss 0.03342
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  34 |    10/   89 batches | lr 0.000815 | 869.60 ms | loss 0.03318
+| epoch  34 |    20/   89 batches | lr 0.000815 | 829.24 ms | loss 0.03035
+| epoch  34 |    30/   89 batches | lr 0.000815 | 824.13 ms | loss 0.02356
+| epoch  34 |    40/   89 batches | lr 0.000815 | 833.34 ms | loss 0.02379
+| epoch  34 |    50/   89 batches | lr 0.000815 | 810.84 ms | loss 0.02486
+| epoch  34 |    60/   89 batches | lr 0.000815 | 829.09 ms | loss 0.01983
+| epoch  34 |    70/   89 batches | lr 0.000815 | 832.96 ms | loss 0.05234
+| epoch  34 |    80/   89 batches | lr 0.000815 | 843.78 ms | loss 0.04465
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch  34 | time: 140.30s | valid loss 0.03331
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  35 |    10/   89 batches | lr 0.000815 | 1278.37 ms | loss 0.03328
+| epoch  35 |    20/   89 batches | lr 0.000815 | 860.92 ms | loss 0.02976
+| epoch  35 |    30/   89 batches | lr 0.000815 | 898.10 ms | loss 0.02392
+| epoch  35 |    40/   89 batches | lr 0.000815 | 805.57 ms | loss 0.02375
+| epoch  35 |    50/   89 batches | lr 0.000815 | 805.74 ms | loss 0.02497
+| epoch  35 |    60/   89 batches | lr 0.000815 | 820.27 ms | loss 0.01979
+| epoch  35 |    70/   89 batches | lr 0.000815 | 832.99 ms | loss 0.05209
+| epoch  35 |    80/   89 batches | lr 0.000815 | 1940.06 ms | loss 0.04460
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9870801033591732
+precision:  1.0  recall:  0.7887323943661971  acc:  0.9974151301051181  f1:  0.8818897637795275
+-----------------------------------------------------------------------------------------
+| end of epoch  35 | time: 152.17s | valid loss 0.03282
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  36 |    10/   89 batches | lr 0.000815 | 898.67 ms | loss 0.03294
+| epoch  36 |    20/   89 batches | lr 0.000815 | 895.22 ms | loss 0.02928
+| epoch  36 |    30/   89 batches | lr 0.000815 | 1282.96 ms | loss 0.02326
+| epoch  36 |    40/   89 batches | lr 0.000815 | 885.36 ms | loss 0.02341
+| epoch  36 |    50/   89 batches | lr 0.000815 | 1008.87 ms | loss 0.02461
+| epoch  36 |    60/   89 batches | lr 0.000815 | 927.55 ms | loss 0.01957
+| epoch  36 |    70/   89 batches | lr 0.000815 | 964.75 ms | loss 0.05195
+| epoch  36 |    80/   89 batches | lr 0.000815 | 2271.45 ms | loss 0.04432
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9870801033591732
+precision:  0.9827586206896551  recall:  0.8028169014084507  acc:  0.9974151301051181  f1:  0.8837209302325583
+-----------------------------------------------------------------------------------------
+| end of epoch  36 | time: 149.14s | valid loss 0.03295
+-----------------------------------------------------------------------------------------
+| epoch  37 |    10/   89 batches | lr 0.000815 | 890.23 ms | loss 0.03282
+| epoch  37 |    20/   89 batches | lr 0.000815 | 797.93 ms | loss 0.02870
+| epoch  37 |    30/   89 batches | lr 0.000815 | 808.93 ms | loss 0.02364
+| epoch  37 |    40/   89 batches | lr 0.000815 | 807.79 ms | loss 0.02336
+| epoch  37 |    50/   89 batches | lr 0.000815 | 917.58 ms | loss 0.02471
+| epoch  37 |    60/   89 batches | lr 0.000815 | 846.40 ms | loss 0.01958
+| epoch  37 |    70/   89 batches | lr 0.000815 | 839.82 ms | loss 0.05175
+| epoch  37 |    80/   89 batches | lr 0.000815 | 2354.37 ms | loss 0.04430
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9879414298018949
+precision:  1.0  recall:  0.8028169014084507  acc:  0.9975874547647768  f1:  0.890625
+-----------------------------------------------------------------------------------------
+| end of epoch  37 | time: 149.75s | valid loss 0.03244
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  38 |    10/   89 batches | lr 0.000815 | 890.08 ms | loss 0.03279
+| epoch  38 |    20/   89 batches | lr 0.000815 | 800.03 ms | loss 0.02854
+| epoch  38 |    30/   89 batches | lr 0.000815 | 856.05 ms | loss 0.02309
+| epoch  38 |    40/   89 batches | lr 0.000815 | 897.39 ms | loss 0.02319
+| epoch  38 |    50/   89 batches | lr 0.000815 | 912.83 ms | loss 0.02435
+| epoch  38 |    60/   89 batches | lr 0.000815 | 860.32 ms | loss 0.01934
+| epoch  38 |    70/   89 batches | lr 0.000815 | 924.55 ms | loss 0.05148
+| epoch  38 |    80/   89 batches | lr 0.000815 | 1485.91 ms | loss 0.04411
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9870801033591732
+precision:  0.9827586206896551  recall:  0.8028169014084507  acc:  0.9974151301051181  f1:  0.8837209302325583
+-----------------------------------------------------------------------------------------
+| end of epoch  38 | time: 150.63s | valid loss 0.03250
+-----------------------------------------------------------------------------------------
+| epoch  39 |    10/   89 batches | lr 0.000815 | 947.65 ms | loss 0.03262
+| epoch  39 |    20/   89 batches | lr 0.000815 | 819.84 ms | loss 0.02798
+| epoch  39 |    30/   89 batches | lr 0.000815 | 826.46 ms | loss 0.02332
+| epoch  39 |    40/   89 batches | lr 0.000815 | 847.19 ms | loss 0.02309
+| epoch  39 |    50/   89 batches | lr 0.000815 | 791.67 ms | loss 0.02448
+| epoch  39 |    60/   89 batches | lr 0.000815 | 796.40 ms | loss 0.01937
+| epoch  39 |    70/   89 batches | lr 0.000815 | 852.46 ms | loss 0.05131
+| epoch  39 |    80/   89 batches | lr 0.000815 | 929.55 ms | loss 0.04409
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9879414298018949
+precision:  1.0  recall:  0.8028169014084507  acc:  0.9975874547647768  f1:  0.890625
+-----------------------------------------------------------------------------------------
+| end of epoch  39 | time: 157.04s | valid loss 0.03224
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  40 |    10/   89 batches | lr 0.000815 | 1151.04 ms | loss 0.03253
+| epoch  40 |    20/   89 batches | lr 0.000815 | 817.34 ms | loss 0.02787
+| epoch  40 |    30/   89 batches | lr 0.000815 | 820.61 ms | loss 0.02280
+| epoch  40 |    40/   89 batches | lr 0.000815 | 840.60 ms | loss 0.02298
+| epoch  40 |    50/   89 batches | lr 0.000815 | 855.57 ms | loss 0.02412
+| epoch  40 |    60/   89 batches | lr 0.000815 | 859.00 ms | loss 0.01916
+| epoch  40 |    70/   89 batches | lr 0.000815 | 860.05 ms | loss 0.05131
+| epoch  40 |    80/   89 batches | lr 0.000815 | 885.50 ms | loss 0.04378
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9879414298018949
+precision:  0.9830508474576272  recall:  0.8169014084507042  acc:  0.9975874547647768  f1:  0.8923076923076924
+-----------------------------------------------------------------------------------------
+| end of epoch  40 | time: 146.42s | valid loss 0.03242
+-----------------------------------------------------------------------------------------
+| epoch  41 |    10/   89 batches | lr 0.000774 | 865.47 ms | loss 0.03264
+| epoch  41 |    20/   89 batches | lr 0.000774 | 821.89 ms | loss 0.02774
+| epoch  41 |    30/   89 batches | lr 0.000774 | 824.03 ms | loss 0.02326
+| epoch  41 |    40/   89 batches | lr 0.000774 | 831.69 ms | loss 0.02309
+| epoch  41 |    50/   89 batches | lr 0.000774 | 860.49 ms | loss 0.02435
+| epoch  41 |    60/   89 batches | lr 0.000774 | 829.50 ms | loss 0.01947
+| epoch  41 |    70/   89 batches | lr 0.000774 | 865.73 ms | loss 0.05116
+| epoch  41 |    80/   89 batches | lr 0.000774 | 810.39 ms | loss 0.04381
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch  41 | time: 143.05s | valid loss 0.03189
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  42 |    10/   89 batches | lr 0.000774 | 976.70 ms | loss 0.03230
+| epoch  42 |    20/   89 batches | lr 0.000774 | 942.15 ms | loss 0.02742
+| epoch  42 |    30/   89 batches | lr 0.000774 | 912.02 ms | loss 0.02276
+| epoch  42 |    40/   89 batches | lr 0.000774 | 915.07 ms | loss 0.02282
+| epoch  42 |    50/   89 batches | lr 0.000774 | 971.04 ms | loss 0.02385
+| epoch  42 |    60/   89 batches | lr 0.000774 | 935.05 ms | loss 0.01907
+| epoch  42 |    70/   89 batches | lr 0.000774 | 951.01 ms | loss 0.05112
+| epoch  42 |    80/   89 batches | lr 0.000774 | 877.14 ms | loss 0.04350
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9888027562446167
+precision:  0.9833333333333333  recall:  0.8309859154929577  acc:  0.9977597794244356  f1:  0.900763358778626
+-----------------------------------------------------------------------------------------
+| end of epoch  42 | time: 146.44s | valid loss 0.03199
+-----------------------------------------------------------------------------------------
+| epoch  43 |    10/   89 batches | lr 0.000774 | 903.06 ms | loss 0.03236
+| epoch  43 |    20/   89 batches | lr 0.000774 | 959.62 ms | loss 0.02711
+| epoch  43 |    30/   89 batches | lr 0.000774 | 1059.69 ms | loss 0.02301
+| epoch  43 |    40/   89 batches | lr 0.000774 | 992.07 ms | loss 0.02290
+| epoch  43 |    50/   89 batches | lr 0.000774 | 973.51 ms | loss 0.02417
+| epoch  43 |    60/   89 batches | lr 0.000774 | 1042.84 ms | loss 0.01930
+| epoch  43 |    70/   89 batches | lr 0.000774 | 848.87 ms | loss 0.05084
+| epoch  43 |    80/   89 batches | lr 0.000774 | 832.40 ms | loss 0.04346
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9870801033591732
+precision:  1.0  recall:  0.7887323943661971  acc:  0.9974151301051181  f1:  0.8818897637795275
+-----------------------------------------------------------------------------------------
+| end of epoch  43 | time: 136.37s | valid loss 0.03168
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  44 |    10/   89 batches | lr 0.000774 | 857.79 ms | loss 0.03208
+| epoch  44 |    20/   89 batches | lr 0.000774 | 1815.17 ms | loss 0.02706
+| epoch  44 |    30/   89 batches | lr 0.000774 | 733.48 ms | loss 0.02248
+| epoch  44 |    40/   89 batches | lr 0.000774 | 818.62 ms | loss 0.02261
+| epoch  44 |    50/   89 batches | lr 0.000774 | 864.55 ms | loss 0.02364
+| epoch  44 |    60/   89 batches | lr 0.000774 | 880.71 ms | loss 0.01897
+| epoch  44 |    70/   89 batches | lr 0.000774 | 932.52 ms | loss 0.05087
+| epoch  44 |    80/   89 batches | lr 0.000774 | 973.73 ms | loss 0.04323
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch  44 | time: 140.12s | valid loss 0.03170
+-----------------------------------------------------------------------------------------
+| epoch  45 |    10/   89 batches | lr 0.000774 | 895.29 ms | loss 0.03222
+| epoch  45 |    20/   89 batches | lr 0.000774 | 844.16 ms | loss 0.02604
+| epoch  45 |    30/   89 batches | lr 0.000774 | 1510.05 ms | loss 0.02280
+| epoch  45 |    40/   89 batches | lr 0.000774 | 1345.83 ms | loss 0.02259
+| epoch  45 |    50/   89 batches | lr 0.000774 | 785.92 ms | loss 0.02400
+| epoch  45 |    60/   89 batches | lr 0.000774 | 824.04 ms | loss 0.01922
+| epoch  45 |    70/   89 batches | lr 0.000774 | 822.17 ms | loss 0.05050
+| epoch  45 |    80/   89 batches | lr 0.000774 | 820.29 ms | loss 0.04325
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch  45 | time: 142.08s | valid loss 0.03152
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  46 |    10/   89 batches | lr 0.000774 | 959.01 ms | loss 0.03192
+| epoch  46 |    20/   89 batches | lr 0.000774 | 857.27 ms | loss 0.02670
+| epoch  46 |    30/   89 batches | lr 0.000774 | 842.10 ms | loss 0.02241
+| epoch  46 |    40/   89 batches | lr 0.000774 | 1920.50 ms | loss 0.02250
+| epoch  46 |    50/   89 batches | lr 0.000774 | 766.83 ms | loss 0.02353
+| epoch  46 |    60/   89 batches | lr 0.000774 | 788.66 ms | loss 0.01889
+| epoch  46 |    70/   89 batches | lr 0.000774 | 843.24 ms | loss 0.05070
+| epoch  46 |    80/   89 batches | lr 0.000774 | 867.84 ms | loss 0.04298
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9879414298018949
+precision:  1.0  recall:  0.8028169014084507  acc:  0.9975874547647768  f1:  0.890625
+-----------------------------------------------------------------------------------------
+| end of epoch  46 | time: 137.07s | valid loss 0.03141
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  47 |    10/   89 batches | lr 0.000774 | 923.87 ms | loss 0.03207
+| epoch  47 |    20/   89 batches | lr 0.000774 | 869.01 ms | loss 0.02582
+| epoch  47 |    30/   89 batches | lr 0.000774 | 798.05 ms | loss 0.02260
+| epoch  47 |    40/   89 batches | lr 0.000774 | 849.38 ms | loss 0.02244
+| epoch  47 |    50/   89 batches | lr 0.000774 | 836.82 ms | loss 0.02390
+| epoch  47 |    60/   89 batches | lr 0.000774 | 2115.23 ms | loss 0.01913
+| epoch  47 |    70/   89 batches | lr 0.000774 | 810.42 ms | loss 0.05051
+| epoch  47 |    80/   89 batches | lr 0.000774 | 865.77 ms | loss 0.04302
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9870801033591732
+precision:  1.0  recall:  0.7887323943661971  acc:  0.9974151301051181  f1:  0.8818897637795275
+-----------------------------------------------------------------------------------------
+| end of epoch  47 | time: 140.07s | valid loss 0.03122
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  48 |    10/   89 batches | lr 0.000774 | 906.74 ms | loss 0.03166
+| epoch  48 |    20/   89 batches | lr 0.000774 | 813.47 ms | loss 0.02593
+| epoch  48 |    30/   89 batches | lr 0.000774 | 803.88 ms | loss 0.02225
+| epoch  48 |    40/   89 batches | lr 0.000774 | 846.09 ms | loss 0.02224
+| epoch  48 |    50/   89 batches | lr 0.000774 | 852.53 ms | loss 0.02340
+| epoch  48 |    60/   89 batches | lr 0.000774 | 1824.77 ms | loss 0.01873
+| epoch  48 |    70/   89 batches | lr 0.000774 | 782.33 ms | loss 0.05048
+| epoch  48 |    80/   89 batches | lr 0.000774 | 848.42 ms | loss 0.04283
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9870801033591732
+precision:  1.0  recall:  0.7887323943661971  acc:  0.9974151301051181  f1:  0.8818897637795275
+-----------------------------------------------------------------------------------------
+| end of epoch  48 | time: 140.22s | valid loss 0.03117
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  49 |    10/   89 batches | lr 0.000735 | 1267.73 ms | loss 0.03184
+| epoch  49 |    20/   89 batches | lr 0.000735 | 837.86 ms | loss 0.02532
+| epoch  49 |    30/   89 batches | lr 0.000735 | 836.69 ms | loss 0.02243
+| epoch  49 |    40/   89 batches | lr 0.000735 | 839.86 ms | loss 0.02241
+| epoch  49 |    50/   89 batches | lr 0.000735 | 838.43 ms | loss 0.02381
+| epoch  49 |    60/   89 batches | lr 0.000735 | 1795.49 ms | loss 0.01912
+| epoch  49 |    70/   89 batches | lr 0.000735 | 801.46 ms | loss 0.05037
+| epoch  49 |    80/   89 batches | lr 0.000735 | 791.65 ms | loss 0.04284
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9870801033591732
+precision:  1.0  recall:  0.7887323943661971  acc:  0.9974151301051181  f1:  0.8818897637795275
+-----------------------------------------------------------------------------------------
+| end of epoch  49 | time: 148.61s | valid loss 0.03094
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  50 |    10/   89 batches | lr 0.000735 | 1167.15 ms | loss 0.03141
+| epoch  50 |    20/   89 batches | lr 0.000735 | 1052.95 ms | loss 0.02569
+| epoch  50 |    30/   89 batches | lr 0.000735 | 1033.07 ms | loss 0.02223
+| epoch  50 |    40/   89 batches | lr 0.000735 | 1057.26 ms | loss 0.02222
+| epoch  50 |    50/   89 batches | lr 0.000735 | 1073.63 ms | loss 0.02330
+| epoch  50 |    60/   89 batches | lr 0.000735 | 1046.02 ms | loss 0.01865
+| epoch  50 |    70/   89 batches | lr 0.000735 | 960.46 ms | loss 0.05025
+| epoch  50 |    80/   89 batches | lr 0.000735 | 2339.91 ms | loss 0.04253
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch  50 | time: 181.66s | valid loss 0.03093
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  51 |    10/   89 batches | lr 0.000735 | 1091.21 ms | loss 0.03157
+| epoch  51 |    20/   89 batches | lr 0.000735 | 1016.11 ms | loss 0.02496
+| epoch  51 |    30/   89 batches | lr 0.000735 | 1000.50 ms | loss 0.02229
+| epoch  51 |    40/   89 batches | lr 0.000735 | 1061.36 ms | loss 0.02226
+| epoch  51 |    50/   89 batches | lr 0.000735 | 1070.88 ms | loss 0.02362
+| epoch  51 |    60/   89 batches | lr 0.000735 | 1033.42 ms | loss 0.01894
+| epoch  51 |    70/   89 batches | lr 0.000735 | 1012.72 ms | loss 0.05000
+| epoch  51 |    80/   89 batches | lr 0.000735 | 1028.72 ms | loss 0.04255
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch  51 | time: 191.85s | valid loss 0.03050
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  52 |    10/   89 batches | lr 0.000735 | 1027.19 ms | loss 0.03119
+| epoch  52 |    20/   89 batches | lr 0.000735 | 890.53 ms | loss 0.02510
+| epoch  52 |    30/   89 batches | lr 0.000735 | 870.82 ms | loss 0.02202
+| epoch  52 |    40/   89 batches | lr 0.000735 | 886.65 ms | loss 0.02206
+| epoch  52 |    50/   89 batches | lr 0.000735 | 997.50 ms | loss 0.02325
+| epoch  52 |    60/   89 batches | lr 0.000735 | 1125.01 ms | loss 0.01859
+| epoch  52 |    70/   89 batches | lr 0.000735 | 2210.35 ms | loss 0.04987
+| epoch  52 |    80/   89 batches | lr 0.000735 | 1024.38 ms | loss 0.04245
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9870801033591732
+precision:  0.9827586206896551  recall:  0.8028169014084507  acc:  0.9974151301051181  f1:  0.8837209302325583
+-----------------------------------------------------------------------------------------
+| end of epoch  52 | time: 176.16s | valid loss 0.03084
+-----------------------------------------------------------------------------------------
+| epoch  53 |    10/   89 batches | lr 0.000735 | 1015.52 ms | loss 0.03136
+| epoch  53 |    20/   89 batches | lr 0.000735 | 992.16 ms | loss 0.02495
+| epoch  53 |    30/   89 batches | lr 0.000735 | 987.16 ms | loss 0.02247
+| epoch  53 |    40/   89 batches | lr 0.000735 | 937.17 ms | loss 0.02245
+| epoch  53 |    50/   89 batches | lr 0.000735 | 936.06 ms | loss 0.02350
+| epoch  53 |    60/   89 batches | lr 0.000735 | 991.54 ms | loss 0.01871
+| epoch  53 |    70/   89 batches | lr 0.000735 | 965.67 ms | loss 0.04973
+| epoch  53 |    80/   89 batches | lr 0.000735 | 2496.38 ms | loss 0.04254
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9888027562446167
+precision:  1.0  recall:  0.8169014084507042  acc:  0.9977597794244356  f1:  0.8992248062015504
+-----------------------------------------------------------------------------------------
+| end of epoch  53 | time: 152.13s | valid loss 0.03017
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  54 |    10/   89 batches | lr 0.000735 | 968.86 ms | loss 0.03103
+| epoch  54 |    20/   89 batches | lr 0.000735 | 825.57 ms | loss 0.02448
+| epoch  54 |    30/   89 batches | lr 0.000735 | 850.29 ms | loss 0.02176
+| epoch  54 |    40/   89 batches | lr 0.000735 | 853.49 ms | loss 0.02209
+| epoch  54 |    50/   89 batches | lr 0.000735 | 833.53 ms | loss 0.02321
+| epoch  54 |    60/   89 batches | lr 0.000735 | 826.37 ms | loss 0.01871
+| epoch  54 |    70/   89 batches | lr 0.000735 | 846.97 ms | loss 0.04957
+| epoch  54 |    80/   89 batches | lr 0.000735 | 915.12 ms | loss 0.04235
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9896640826873385
+precision:  0.9836065573770492  recall:  0.8450704225352113  acc:  0.9979321040840944  f1:  0.9090909090909091
+-----------------------------------------------------------------------------------------
+| end of epoch  54 | time: 136.68s | valid loss 0.03092
+-----------------------------------------------------------------------------------------
+| epoch  55 |    10/   89 batches | lr 0.000735 | 919.65 ms | loss 0.03106
+| epoch  55 |    20/   89 batches | lr 0.000735 | 858.62 ms | loss 0.02521
+| epoch  55 |    30/   89 batches | lr 0.000735 | 852.29 ms | loss 0.02284
+| epoch  55 |    40/   89 batches | lr 0.000735 | 850.81 ms | loss 0.02248
+| epoch  55 |    50/   89 batches | lr 0.000735 | 888.10 ms | loss 0.02344
+| epoch  55 |    60/   89 batches | lr 0.000735 | 987.32 ms | loss 0.01843
+| epoch  55 |    70/   89 batches | lr 0.000735 | 907.81 ms | loss 0.04944
+| epoch  55 |    80/   89 batches | lr 0.000735 | 850.89 ms | loss 0.04239
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9888027562446167
+precision:  1.0  recall:  0.8169014084507042  acc:  0.9977597794244356  f1:  0.8992248062015504
+-----------------------------------------------------------------------------------------
+| end of epoch  55 | time: 138.81s | valid loss 0.03012
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  56 |    10/   89 batches | lr 0.000735 | 914.92 ms | loss 0.03094
+| epoch  56 |    20/   89 batches | lr 0.000735 | 857.21 ms | loss 0.02439
+| epoch  56 |    30/   89 batches | lr 0.000735 | 910.85 ms | loss 0.02151
+| epoch  56 |    40/   89 batches | lr 0.000735 | 865.05 ms | loss 0.02190
+| epoch  56 |    50/   89 batches | lr 0.000735 | 903.28 ms | loss 0.02331
+| epoch  56 |    60/   89 batches | lr 0.000735 | 863.07 ms | loss 0.01916
+| epoch  56 |    70/   89 batches | lr 0.000735 | 878.34 ms | loss 0.04937
+| epoch  56 |    80/   89 batches | lr 0.000735 | 853.20 ms | loss 0.04228
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch  56 | time: 139.16s | valid loss 0.03074
+-----------------------------------------------------------------------------------------
+| epoch  57 |    10/   89 batches | lr 0.000698 | 1009.63 ms | loss 0.03080
+| epoch  57 |    20/   89 batches | lr 0.000698 | 900.38 ms | loss 0.02468
+| epoch  57 |    30/   89 batches | lr 0.000698 | 888.93 ms | loss 0.02225
+| epoch  57 |    40/   89 batches | lr 0.000698 | 860.58 ms | loss 0.02205
+| epoch  57 |    50/   89 batches | lr 0.000698 | 899.70 ms | loss 0.02317
+| epoch  57 |    60/   89 batches | lr 0.000698 | 865.58 ms | loss 0.01824
+| epoch  57 |    70/   89 batches | lr 0.000698 | 952.54 ms | loss 0.04900
+| epoch  57 |    80/   89 batches | lr 0.000698 | 930.44 ms | loss 0.04206
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9870801033591732
+precision:  1.0  recall:  0.7887323943661971  acc:  0.9974151301051181  f1:  0.8818897637795275
+-----------------------------------------------------------------------------------------
+| end of epoch  57 | time: 143.46s | valid loss 0.02997
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  58 |    10/   89 batches | lr 0.000698 | 962.91 ms | loss 0.03079
+| epoch  58 |    20/   89 batches | lr 0.000698 | 890.99 ms | loss 0.02331
+| epoch  58 |    30/   89 batches | lr 0.000698 | 874.16 ms | loss 0.02118
+| epoch  58 |    40/   89 batches | lr 0.000698 | 909.14 ms | loss 0.02187
+| epoch  58 |    50/   89 batches | lr 0.000698 | 894.87 ms | loss 0.02321
+| epoch  58 |    60/   89 batches | lr 0.000698 | 919.15 ms | loss 0.01888
+| epoch  58 |    70/   89 batches | lr 0.000698 | 984.27 ms | loss 0.04917
+| epoch  58 |    80/   89 batches | lr 0.000698 | 1004.73 ms | loss 0.04192
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch  58 | time: 165.55s | valid loss 0.03024
+-----------------------------------------------------------------------------------------
+| epoch  59 |    10/   89 batches | lr 0.000698 | 968.11 ms | loss 0.03043
+| epoch  59 |    20/   89 batches | lr 0.000698 | 868.10 ms | loss 0.02401
+| epoch  59 |    30/   89 batches | lr 0.000698 | 905.81 ms | loss 0.02167
+| epoch  59 |    40/   89 batches | lr 0.000698 | 912.10 ms | loss 0.02169
+| epoch  59 |    50/   89 batches | lr 0.000698 | 929.62 ms | loss 0.02285
+| epoch  59 |    60/   89 batches | lr 0.000698 | 896.96 ms | loss 0.01816
+| epoch  59 |    70/   89 batches | lr 0.000698 | 861.24 ms | loss 0.04891
+| epoch  59 |    80/   89 batches | lr 0.000698 | 912.01 ms | loss 0.04165
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+精度为0.9862187769164513
+precision:  1.0  recall:  0.7746478873239436  acc:  0.9972428054454593  f1:  0.873015873015873
+-----------------------------------------------------------------------------------------
+| end of epoch  59 | time: 147.26s | valid loss 0.02975
+-----------------------------------------------------------------------------------------
+save successfully
+| epoch  60 |    10/   89 batches | lr 0.000698 | 963.55 ms | loss 0.03061
+| epoch  60 |    20/   89 batches | lr 0.000698 | 994.80 ms | loss 0.02317
+| epoch  60 |    30/   89 batches | lr 0.000698 | 929.71 ms | loss 0.02107
+| epoch  60 |    40/   89 batches | lr 0.000698 | 1121.76 ms | loss 0.02155
+| epoch  60 |    50/   89 batches | lr 0.000698 | 946.16 ms | loss 0.02299
+| epoch  60 |    60/   89 batches | lr 0.000698 | 866.01 ms | loss 0.01868
+| epoch  60 |    70/   89 batches | lr 0.000698 | 921.14 ms | loss 0.04898
+| epoch  60 |    80/   89 batches | lr 0.000698 | 2082.32 ms | loss 0.04169
+data_source shape: torch.Size([5704, 2, 100, 36])
+output shape: torch.Size([100, 1, 36])
+output[[0]].shape: torch.Size([1, 1, 36])
+output[:-1].shape: torch.Size([99, 1, 36])
+truth shape: torch.Size([5803, 36])
+test_result shape: torch.Size([5803, 36])
+output truth shape: (5803, 36)
+output test_result shape: (5803, 36)
+test_result[0].shape, type (36,) float64
+test_result.shape, type (5803, 36) float64
+loss shape:  (5803, 36)
+---------------------------------
+start SVM
+---------------------------------
+exception calling callback for <Future at 0x1d60b41e148 state=finished raised TerminatedWorkerError>
+Traceback (most recent call last):
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\externals\loky\_base.py", line 625, in _invoke_callbacks
+    callback(self)
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\parallel.py", line 359, in __call__
+    self.parallel.dispatch_next()
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\parallel.py", line 794, in dispatch_next
+    if not self.dispatch_one_batch(self._original_iterator):
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\parallel.py", line 861, in dispatch_one_batch
+    self._dispatch(tasks)
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\parallel.py", line 779, in _dispatch
+    job = self._backend.apply_async(batch, callback=cb)
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\_parallel_backends.py", line 531, in apply_async
+    future = self._workers.submit(SafeFunction(func))
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\externals\loky\reusable_executor.py", line 178, in submit
+    fn, *args, **kwargs)
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\externals\loky\process_executor.py", line 1115, in submit
+    raise self._flags.broken
+joblib.externals.loky.process_executor.TerminatedWorkerError: A worker process managed by the executor was unexpectedly terminated. This could be caused by a segmentation fault while calling the function or by an excessive memory usage causing the Operating System to kill the worker.
+Exception in thread ExecutorManagerThread:
+Traceback (most recent call last):
+  File "D:\miniconda\envs\pytorch\lib\site-packages\psutil\_pswindows.py", line 688, in wrapper
+    return fun(self, *args, **kwargs)
+  File "D:\miniconda\envs\pytorch\lib\site-packages\psutil\_pswindows.py", line 872, in kill
+    return cext.proc_kill(self.pid)
+PermissionError: [WinError 5] 拒绝访问。: '(originated from OpenProcess)'
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "D:\miniconda\envs\pytorch\lib\threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\externals\loky\process_executor.py", line 566, in run
+    self.terminate_broken(bpe)
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\externals\loky\process_executor.py", line 750, in terminate_broken
+    self.kill_workers(reason="broken executor")
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\externals\loky\process_executor.py", line 781, in kill_workers
+    recursive_terminate(p)
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\externals\loky\backend\utils.py", line 26, in recursive_terminate
+    _recursive_terminate_with_psutil(process)
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\externals\loky\backend\utils.py", line 41, in _recursive_terminate_with_psutil
+    child.kill()
+  File "D:\miniconda\envs\pytorch\lib\site-packages\psutil\__init__.py", line 278, in wrapper
+    return fun(self, *args, **kwargs)
+  File "D:\miniconda\envs\pytorch\lib\site-packages\psutil\__init__.py", line 1248, in kill
+    self._proc.kill()
+  File "D:\miniconda\envs\pytorch\lib\site-packages\psutil\_pswindows.py", line 690, in wrapper
+    raise convert_oserror(err, pid=self.pid, name=self._name)
+psutil.AccessDenied: (pid=18012)
+Traceback (most recent call last):
+  File "train.py", line 150, in <module>
+    main(args)
+  File "train.py", line 115, in main
+    val_loss = plot_and_loss(model, val_data, epoch, criterion, input_window, scaler, args.dim, labels)
+  File "D:\PythonProject\Time_series_anomaly_detection\utils\plot_and_loss.py", line 104, in plot_and_loss
+    clf = svm_c(loss_value, labels)
+  File "D:\PythonProject\Time_series_anomaly_detection\utils\plot_and_loss.py", line 164, in svm_c
+    clf = grid.fit(x_train, y_train)
+  File "D:\miniconda\envs\pytorch\lib\site-packages\sklearn\model_selection\_search.py", line 891, in fit
+    self._run_search(evaluate_candidates)
+  File "D:\miniconda\envs\pytorch\lib\site-packages\sklearn\model_selection\_search.py", line 1768, in _run_search
+    self.param_distributions, self.n_iter, random_state=self.random_state
+  File "D:\miniconda\envs\pytorch\lib\site-packages\sklearn\model_selection\_search.py", line 851, in evaluate_candidates
+    enumerate(candidate_params), enumerate(cv.split(X, y, groups))
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\parallel.py", line 1056, in __call__
+    self.retrieve()
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\parallel.py", line 935, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\_parallel_backends.py", line 542, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "D:\miniconda\envs\pytorch\lib\concurrent\futures\_base.py", line 435, in result
+    return self.__get_result()
+  File "D:\miniconda\envs\pytorch\lib\concurrent\futures\_base.py", line 384, in __get_result
+    raise self._exception
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\externals\loky\_base.py", line 625, in _invoke_callbacks
+    callback(self)
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\parallel.py", line 359, in __call__
+    self.parallel.dispatch_next()
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\parallel.py", line 794, in dispatch_next
+    if not self.dispatch_one_batch(self._original_iterator):
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\parallel.py", line 861, in dispatch_one_batch
+    self._dispatch(tasks)
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\parallel.py", line 779, in _dispatch
+    job = self._backend.apply_async(batch, callback=cb)
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\_parallel_backends.py", line 531, in apply_async
+    future = self._workers.submit(SafeFunction(func))
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\externals\loky\reusable_executor.py", line 178, in submit
+    fn, *args, **kwargs)
+  File "D:\miniconda\envs\pytorch\lib\site-packages\joblib\externals\loky\process_executor.py", line 1115, in submit
+    raise self._flags.broken
+joblib.externals.loky.process_executor.TerminatedWorkerError: A worker process managed by the executor was unexpectedly terminated. This could be caused by a segmentation fault while calling the function or by an excessive memory usage causing the Operating System to kill the worker.
+D:\miniconda\envs\pytorch\lib\site-packages\joblib\_memmapping_reducer.py:608: UserWarning: Failed to delete temporary folder: C:\Windows\TEMP\joblib_memmapping_folder_22896_791fecc3ee4042c19c26d4e34750662f_2edc82c8b5004400825e4b570ab1fff3
+  .format(pool_subfolder))
