@@ -42,7 +42,7 @@ class TransAm(nn.Module):
             self.src_mask = mask
 
 
-        # src = self.pos_encoder(src)
+        src = self.pos_encoder(src)
         # src = self.encoder_linear(src)
         # src = self.encoder_relu(src)
         output = self.transformer_encoder(src, self.src_mask)  # , self.src_mask)

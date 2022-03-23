@@ -77,6 +77,11 @@ def get_data(args, input_window, output_window, device='cpu'):
     test_data = create_inout_sequences(test_data, input_window, output_window)
     test_data = test_data[:-output_window]
 
+    print('====================================================')
+    print('train_sequence.shape:', train_sequence.shape)
+    print('test_data.shape:', test_data.shape)
+    print('====================================================')
+
     # return train_sequence.to(device), test_data.to(device), timestamp, scaler
     return train_sequence.to(device), test_data.to(device), scaler, labels
 

@@ -16,10 +16,15 @@ import wandb
 def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scaler, dim, labels):
     model_type = eval_model.model_type
     eval_model.eval()
+
+    print('data_source.shape: ', data_source.shape)
+    print('---------------------------------')
     # print('---------------------------------')
     # print('data_source shape:', data_source.shape)
     # print('data_source[[0]]:', data_source[[0]].shape)
     data_source = torch.cat((data_source[[0]], data_source, data_source[[-1]]), 0)
+    print('data_source shape:', data_source.shape)
+    print('---------------------------------')
 
 
     # data_source = np.concentrate(data_source[])
@@ -27,7 +32,6 @@ def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scale
     # test_result = torch.Tensor(0)
     # truth = torch.Tensor(0)
     print('data_source shape:', data_source.shape)
-    input_dim = data_source.shape[1]
     with torch.no_grad():
         for i in range(0, len(data_source) - 1):
             data, target = get_batch(data_source, i, 1, input_window)
@@ -35,7 +39,6 @@ def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scale
             if i == 0:
                 print('output shape:', output.shape)
                 if output.shape[2] == 1:
-                    flag = True
                     test_result = torch.cat((output[0].view(-1), output[:-1].view(-1).cpu()), 0)
                     truth = target.view(-1)
                 else:
@@ -92,7 +95,8 @@ def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scale
 
         plt.plot(truth[:, i], color="blue")
         plt.plot(test_result[:, i], color="red")
-        plt.plot(labels*100, color="yellow")
+        plt.plot(labels, color="yellow")
+        plt.plot(test_result[:, i] - truth[:, i], color="black")
 
         plt.grid(True, which='both')
         plt.axhline(y=0, color='k')
@@ -130,26 +134,26 @@ def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scale
     # pred = np.where(test_result - truth > threshold, 1, 0)
     # label = pd.read_csv('dataset/cpu4.csv')['label'].values
 
-    clf = svm_c(loss_value, labels)
-    pred = clf.predict(loss_value)
+    clf, x_test, y_test = svm_c(loss_value, labels)
+    pred = clf.predict(x_test)
     # print('pred classNM:\n', pred)
-    compare_csv = pd.DataFrame({"pred": pred, "label": labels})
+    compare_csv = pd.DataFrame({"pred": pred, "label": y_test})
     compare_csv.to_csv("res/compare_" + model_type + ".csv", index=False)
 
 
 
-    exp_precision = cal_precision(pred, labels)
-    exp_recall = cal_recall(pred, labels)
-    exp_acc = cal_acc(pred, labels)
-    exp_f1 = cal_f1(pred, labels)
+    exp_precision = cal_precision(pred, y_test)
+    exp_recall = cal_recall(pred, y_test)
+    exp_acc = cal_acc(pred, y_test)
+    exp_f1 = cal_f1(pred, y_test)
     print('precision: ', exp_precision, ' recall: ', exp_recall, ' acc: ', exp_acc, ' f1: ', exp_f1)
-    print('混淆矩阵: \n', confusion_matrix(labels, pred))
+    print('混淆矩阵: \n', confusion_matrix(y_test, pred))
     # wandb.log({"precision": cal_precision(pred, label), "recall": cal_recall(pred, label), "acc": cal_acc(pred, label), "f1": cal_f1(pred, label)})
 
-    cls_report = classification_report(labels, pred)
+    cls_report = classification_report(y_test, pred)
     cls_report_csv = pd.DataFrame(cls_report.split('\n'))
     cls_report_csv.to_csv("res/cls_report_" + model_type + ".csv", index=False)
-    exp_out = pd.DataFrame({'precision': [cal_precision(pred, labels)], 'recall': [cal_recall(pred, labels)], 'acc': [cal_acc(pred, labels)], 'f1': [cal_f1(pred, labels)]})
+    exp_out = pd.DataFrame({'precision': [cal_precision(pred, y_test)], 'recall': [cal_recall(pred, y_test)], 'acc': [cal_acc(pred, y_test)], 'f1': [cal_f1(pred, y_test)]})
     exp_out_path = "exp/exp_out_" + str(epoch) + " model_" + model_type + ".csv"
     exp_out.to_csv(exp_out_path, index=False)
 
@@ -195,4 +199,4 @@ def svm_c(input_data, labels):
     score = grid.score(x_test, y_test)
     print('精度为%s' % score)
 
-    return clf
+    return clf, x_test, y_test
