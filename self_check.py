@@ -6,6 +6,7 @@ from sklearn.preprocessing import MinMaxScaler
 import pandas as pd
 import torch.nn as nn
 import torch
+from model.Transformer import TransAm
 
 from utils.data_prepare import get_data, create_inout_sequences, get_batch
 
@@ -14,7 +15,7 @@ def run_self_check(data):
     df = pd.DataFrame(data)
     print(df.head())
 
-    model = torch.load('model.pt')
+    model = TransAm()
     print(model)
 
     resp_json = reconstruct(model, data)

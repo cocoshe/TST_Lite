@@ -8,12 +8,12 @@ from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_sc
     classification_report
 from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split, RandomizedSearchCV
-import wandb
+# import wandb
 
 
 
 # def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, timestamp, scaler, dim, threshold=None):
-def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scaler, dim, labels):
+def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scaler, dim):
     model_type = eval_model.model_type
     eval_model.eval()
 
@@ -95,8 +95,8 @@ def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scale
 
         plt.plot(truth[:, i], color="blue")
         plt.plot(test_result[:, i], color="red")
-        plt.plot(labels, color="yellow")
-        plt.plot(test_result[:, i] - truth[:, i], color="black")
+        # plt.plot(labels, color="yellow")
+        # plt.plot(test_result[:, i] - truth[:, i], color="black")
 
         plt.grid(True, which='both')
         plt.axhline(y=0, color='k')
@@ -108,11 +108,14 @@ def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scale
         plt.savefig('graph/transformer-epoch%d_%s_%s.png' % (epoch, i + 1, model_type))
         plt.close()
 
+    if not os.path.exists('weight'):
+        os.mkdir('weight')
+    torch.save(eval_model.state_dict(), 'weight/epoch%d_%s_%s.pth' % (epoch, dim, model_type))
 
     # res = pd.DataFrame({"date": timestamp.values[:len(truth)], "truth": truth[:, 0], "test_result": test_result[:, 0], "loss": (test_result - truth)[:, 0]})
     # res = pd.DataFrame({"truth": truth[:, 0], "test_result": test_result[:, 0], "loss": (test_result - truth)[:, 0]})
-    # if os.path.exists("res") == False:
-    #     os.mkdir("res")
+    if os.path.exists("res") == False:
+        os.mkdir("res")
     # res_csv_path = "res/test_loss_" + str(dim) + ".csv"
     # res_csv_path = "res/test_loss_" + model_type + ".csv"
     # with open(res_csv_path, "w") as f:
@@ -134,31 +137,32 @@ def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scale
     # pred = np.where(test_result - truth > threshold, 1, 0)
     # label = pd.read_csv('dataset/cpu4.csv')['label'].values
 
-    clf, x_test, y_test = svm_c(loss_value, labels)
-    pred = clf.predict(x_test)
+    # clf, x_test, y_test = svm_c(loss_value, labels)
+    # pred = clf.predict(x_test)
     # print('pred classNM:\n', pred)
-    compare_csv = pd.DataFrame({"pred": pred, "label": y_test})
-    compare_csv.to_csv("res/compare_" + model_type + ".csv", index=False)
+    # compare_csv = pd.DataFrame({"pred": pred, "label": y_test})
+    # compare_csv.to_csv("res/compare_" + model_type + ".csv", index=False)
 
 
 
-    exp_precision = cal_precision(pred, y_test)
-    exp_recall = cal_recall(pred, y_test)
-    exp_acc = cal_acc(pred, y_test)
-    exp_f1 = cal_f1(pred, y_test)
-    print('precision: ', exp_precision, ' recall: ', exp_recall, ' acc: ', exp_acc, ' f1: ', exp_f1)
-    print('混淆矩阵: \n', confusion_matrix(y_test, pred))
+    # exp_precision = cal_precision(pred, y_test)
+    # exp_recall = cal_recall(pred, y_test)
+    # exp_acc = cal_acc(pred, y_test)
+    # exp_f1 = cal_f1(pred, y_test)
+    # print('precision: ', exp_precision, ' recall: ', exp_recall, ' acc: ', exp_acc, ' f1: ', exp_f1)
+    # print('混淆矩阵: \n', confusion_matrix(y_test, pred))
     # wandb.log({"precision": cal_precision(pred, label), "recall": cal_recall(pred, label), "acc": cal_acc(pred, label), "f1": cal_f1(pred, label)})
 
-    cls_report = classification_report(y_test, pred)
-    cls_report_csv = pd.DataFrame(cls_report.split('\n'))
-    cls_report_csv.to_csv("res/cls_report_" + model_type + ".csv", index=False)
-    exp_out = pd.DataFrame({'precision': [cal_precision(pred, y_test)], 'recall': [cal_recall(pred, y_test)], 'acc': [cal_acc(pred, y_test)], 'f1': [cal_f1(pred, y_test)]})
-    exp_out_path = "exp/exp_out_" + str(epoch) + " model_" + model_type + ".csv"
-    exp_out.to_csv(exp_out_path, index=False)
+    # cls_report = classification_report(y_test, pred)
+    # cls_report_csv = pd.DataFrame(cls_report.split('\n'))
+    # cls_report_csv.to_csv("res/cls_report_" + model_type + ".csv", index=False)
+    # exp_out = pd.DataFrame({'precision': [cal_precision(pred, y_test)], 'recall': [cal_recall(pred, y_test)], 'acc': [cal_acc(pred, y_test)], 'f1': [cal_f1(pred, y_test)]})
+    # exp_out_path = "exp/exp_out_" + str(epoch) + " model_" + model_type + ".csv"
+    # with exp_out_path.open(mode='w') as f:
+    #     exp_out.to_csv(exp_out_path, index=False)
 
 
-    return total_loss / i
+    return total_loss / len(data_source)
 
 
 def cal_precision(pred, label):

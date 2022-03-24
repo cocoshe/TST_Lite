@@ -5,7 +5,7 @@ from model.PositionalEncoding import PositionalEncoding
 
 # todo: adjust features for multi-dimensional input
 class TransAm(nn.Module):
-    def __init__(self, feature_size=250, hidden_size=128, num_layers=1, dropout=0.4):
+    def __init__(self, feature_size=250, hidden_size=128, num_layers=1, dropout=0.1):
         super(TransAm, self).__init__()
         self.model_type = 'Transformer'
 

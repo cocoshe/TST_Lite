@@ -1,6 +1,9 @@
+import json
 import math
 import time
 import os
+
+import pandas as pd
 import torch
 import torch.nn as nn
 import numpy as np
@@ -12,9 +15,10 @@ from utils.plot_and_loss import plot_and_loss
 from utils.reconstruct import predict_future
 from utils.eval import evaluate
 from model.lstm import LSTM
+from model.pure_ts import PureTransformer
 
 
-import wandb
+# import wandb
 
 
 # wandb.config = {
@@ -22,12 +26,17 @@ import wandb
 #   "epochs": 100,
 #   "batch_size": 64
 # }
-
+df = pd.read_csv('dataset/new_test.csv',) #header=None)
+df = np.array(df)
+print(df)
+res = dict()
+res['data'] = df.tolist()
+json.dump(res, open('dataset/new_test.json', 'w'))
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--epochs', type=int, default=100, help='Number of epochs to train.')
-    parser.add_argument('--lr', type=float, default=0.001, help='Initial learning rate.')
+    parser.add_argument('--epochs', type=int, default=60, help='Number of epochs to train.')
+    parser.add_argument('--lr', type=float, default=0.1, help='Initial learning rate.')
     parser.add_argument('--nb_heads', type=int, default=8, help='Number of head attentions.')
     parser.add_argument('--dropout', type=float, default=0.1, help='Dropout rate.')
     parser.add_argument('--input_window', type=int, default=25, help='Number of input steps.')
@@ -35,8 +44,9 @@ def parse_args():
                                                                      'in this model its fixed to one.')
     parser.add_argument('--batch_size', type=int, default=64, help='Number of batch_size.')
     parser.add_argument('--weight', type=str, default="weights/best_model.pth", help='Load weight path.(default: '
-                                                                                    'weights/best_model.pth)')
-    parser.add_argument('--model', type=str, default='ts', help='Wanna run which model?')
+                                                                                     'weights/best_model.pth)')
+    # parser.add_argument('--model', type=str, default='ts', help='Wanna run which model?')
+    parser.add_argument('--model', type=str, default='lstm', help='Wanna run which model?')
 
     parser.add_argument('--port_id', type=str, default=None, help='port_id.')
     parser.add_argument('--polution_id', type=str, default=None, help='polution_id.')
@@ -49,20 +59,19 @@ def parse_args():
     return parser.parse_args()
 
 
-
 # torch.manual_seed(0)
 # np.random.seed(0)
 
-if not os.path.exists("weights"):
-    os.mkdir("weights")
-
-# 格式化成2016-03-20_11:45:39形式
-present = time.strftime("%Y_%m_%d %H_%M_%S", time.localtime())
-logDir = os.getcwd() + os.sep + 'weights' + os.sep + present
-print(logDir)
-
-if not os.path.exists(os.getcwd() + os.sep +  "weights" + os.sep + present):
-    os.mkdir(logDir)
+# if not os.path.exists("weights"):
+#     os.mkdir("weights")
+#
+# # 格式化成2016-03-20_11:45:39形式
+# present = time.strftime("%Y_%m_%d %H_%M_%S", time.localtime())
+# logDir = os.getcwd() + os.sep + 'weights' + os.sep + present
+# print(logDir)
+#
+# if not os.path.exists(os.getcwd() + os.sep +  "weights" + os.sep + present):
+#     os.mkdir(logDir)
 
 # S is the source sequence length
 # T is the target sequence length
@@ -74,7 +83,7 @@ if not os.path.exists(os.getcwd() + os.sep +  "weights" + os.sep + present):
 # out = transformer_model(src, tgt)
 
 
-def main(args):
+def main_(args, data):
     # input_window = 20  # number of input steps
     # output_window = 1  # number of prediction steps, in this model its fixed to one
     # batch_size = 10
@@ -87,15 +96,18 @@ def main(args):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # train_data, val_data, timestamp, scaler = get_data(args, input_window, output_window, device=device)
-    train_data, val_data, scaler, labels = get_data(args, input_window, output_window, device=device)
+    # train_data, val_data, scaler, labels = get_data(args, input_window, output_window, device=device, data=data)
+    train_data, val_data, scaler = get_data(args, input_window, output_window, device=device, data=data)
     if choice_model == 'ts':
         model = TransAm(feature_size=train_data.shape[-1]).to(device)
     elif choice_model == 'lstm':
         model = LSTM(input_size=train_data.shape[-1], output_size=train_data.shape[-1]).to(device)
+    elif choice_model == 'pure_ts':
+        model = PureTransformer(d_model=train_data.shape[-1]).to(device)
     print('model_type: ', model.model_type)
     criterion = nn.MSELoss()
 
-    wandb.init(project="ts-abnormal-detection", name=model.model_type)
+    # wandb.init(project="ts-abnormal-detection", name=model.model_type)
 
     # lr = 0.005
     # optimizer = torch.optim.SGD(model.parameters(), lr=lr)
@@ -112,17 +124,22 @@ def main(args):
 
         if epoch % 1 == 0:
             # val_loss = plot_and_loss(model, val_data, epoch, criterion, input_window, timestamp, scaler, args.dim)
-            val_loss = plot_and_loss(model, val_data, epoch, criterion, input_window, scaler, args.dim, labels)
+            val_loss = plot_and_loss(model, val_data, epoch, criterion, input_window, scaler, args.dim)
             predict_future(model, val_data, 200, input_window)
-            save_path = "weights" + os.sep + present + os.sep +"trained-for-" + str(epoch) + "-epoch.pth"
+            save_path = "weights" + os.sep + "trained-for-" + str(epoch) + "-epoch.pth"
+            if not os.path.exists("weights"):
+                os.mkdir("weights")
             torch.save(model.state_dict(), save_path)
         else:
             val_loss = evaluate(model, val_data, criterion, input_window)
 
         print('-' * 89)
         print('| end of epoch {:3d} | time: {:5.2f}s | valid loss {:5.5f} '.format(epoch, (
-                    time.time() - epoch_start_time), val_loss))
+                time.time() - epoch_start_time), val_loss))
         print('-' * 89)
+
+        if not os.path.exists('weights'):
+            os.mkdir('weights')
 
         if val_loss < best_val_loss:
             best_val_loss = val_loss
@@ -139,12 +156,11 @@ def main(args):
     # print(out)
     # print(out.shape)
 
-
     # save_path = "weights/last_model.pth"
     # torch.save(model.state_dict(), save_path)
     # print("save successfully")
 
-if __name__ == "__main__":
-    args = parse_args()
-    # print(args)
-    main(args)
+# if __name__ == "__main__":
+#     args = parse_args()
+# print(args)
+# main(args)
