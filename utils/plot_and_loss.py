@@ -130,28 +130,28 @@ def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scale
     # pred = np.where(test_result - truth > threshold, 1, 0)
     # label = pd.read_csv('dataset/cpu4.csv')['label'].values
 
-    clf = svm_c(loss_value, labels)
-    pred = clf.predict(loss_value)
-    # print('pred classNM:\n', pred)
-    compare_csv = pd.DataFrame({"pred": pred, "label": labels})
-    compare_csv.to_csv("res/compare_" + model_type + ".csv", index=False)
-
-
-
-    exp_precision = cal_precision(pred, labels)
-    exp_recall = cal_recall(pred, labels)
-    exp_acc = cal_acc(pred, labels)
-    exp_f1 = cal_f1(pred, labels)
-    print('precision: ', exp_precision, ' recall: ', exp_recall, ' acc: ', exp_acc, ' f1: ', exp_f1)
-    print('混淆矩阵: \n', confusion_matrix(labels, pred))
-    # wandb.log({"precision": cal_precision(pred, label), "recall": cal_recall(pred, label), "acc": cal_acc(pred, label), "f1": cal_f1(pred, label)})
-
-    cls_report = classification_report(labels, pred)
-    cls_report_csv = pd.DataFrame(cls_report.split('\n'))
-    cls_report_csv.to_csv("res/cls_report_" + model_type + ".csv", index=False)
-    exp_out = pd.DataFrame({'precision': [cal_precision(pred, labels)], 'recall': [cal_recall(pred, labels)], 'acc': [cal_acc(pred, labels)], 'f1': [cal_f1(pred, labels)]})
-    exp_out_path = "exp/exp_out_" + str(epoch) + " model_" + model_type + ".csv"
-    exp_out.to_csv(exp_out_path, index=False)
+    # clf = svm_c(loss_value, labels)
+    # pred = clf.predict(loss_value)
+    # # print('pred classNM:\n', pred)
+    # compare_csv = pd.DataFrame({"pred": pred, "label": labels})
+    # compare_csv.to_csv("res/compare_" + model_type + ".csv", index=False)
+    #
+    #
+    #
+    # exp_precision = cal_precision(pred, labels)
+    # exp_recall = cal_recall(pred, labels)
+    # exp_acc = cal_acc(pred, labels)
+    # exp_f1 = cal_f1(pred, labels)
+    # print('precision: ', exp_precision, ' recall: ', exp_recall, ' acc: ', exp_acc, ' f1: ', exp_f1)
+    # print('混淆矩阵: \n', confusion_matrix(labels, pred))
+    # # wandb.log({"precision": cal_precision(pred, label), "recall": cal_recall(pred, label), "acc": cal_acc(pred, label), "f1": cal_f1(pred, label)})
+    #
+    # cls_report = classification_report(labels, pred)
+    # cls_report_csv = pd.DataFrame(cls_report.split('\n'))
+    # cls_report_csv.to_csv("res/cls_report_" + model_type + ".csv", index=False)
+    # exp_out = pd.DataFrame({'precision': [cal_precision(pred, labels)], 'recall': [cal_recall(pred, labels)], 'acc': [cal_acc(pred, labels)], 'f1': [cal_f1(pred, labels)]})
+    # exp_out_path = "exp/exp_out_" + str(epoch) + " model_" + model_type + ".csv"
+    # exp_out.to_csv(exp_out_path, index=False)
 
 
     return total_loss / i

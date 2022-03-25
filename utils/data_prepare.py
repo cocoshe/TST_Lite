@@ -32,7 +32,8 @@ def get_data(args, input_window, output_window, device='cpu'):
     # series = read_csv('dataset/test.CSV')
     # series = read_csv('dataset/cpu4.csv')
     # series = read_csv('dataset/mammography_label.csv', header=None)
-    series = read_csv('dataset/Satimage-2.csv', header=None)
+    # series = read_csv('dataset/Satimage-2.csv', header=None)
+    series = read_csv('dataset/sample.csv', header=None)
     # series = read_csv('dataset/all_data.csv')
     print('df.head():\n', series.head())
     # timestamp = series['timestamp']
