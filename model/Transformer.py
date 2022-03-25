@@ -8,8 +8,11 @@ class TransAm(nn.Module):
     def __init__(self, feature_size=250, hidden_size=128, num_layers=1, dropout=0.1):
         super(TransAm, self).__init__()
         self.model_type = 'Transformer'
-
+        output_size = feature_size
         self.src_mask = None
+        if feature_size == 1:
+            feature_size = 250
+            output_size = 1
         # self.fc = nn.Linear(input_dim, hidden_layer)
         self.pos_encoder = PositionalEncoding(feature_size)
 
@@ -23,7 +26,7 @@ class TransAm(nn.Module):
         self.transformer_decoder = nn.TransformerEncoder(self.decoder_layer, num_layers=num_layers)
         # self.decoder1 = nn.Linear(feature_size, feature_size // 2 + 1)
         # self.decoder2 = nn.Linear(feature_size // 2 + 1, feature_size)
-        self.decoder1 = nn.Linear(feature_size, feature_size)
+        self.decoder1 = nn.Linear(feature_size, output_size)
         self.l_relu = nn.LeakyReLU()
         self.init_weights()
 
@@ -56,3 +59,5 @@ class TransAm(nn.Module):
         mask = (torch.triu(torch.ones(sz, sz)) == 1).transpose(0, 1)
         mask = mask.float().masked_fill(mask == 0, float('-inf')).masked_fill(mask == 1, float(0.0))
         return mask
+
+

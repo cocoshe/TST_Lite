@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split, RandomizedSearchCV
 
 
 # def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, timestamp, scaler, dim, threshold=None):
-def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scaler, dim):
+def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scaler, dim, resp_json):
     model_type = eval_model.model_type
     eval_model.eval()
 
@@ -75,8 +75,8 @@ def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scale
     print('output truth shape:', truth.shape)
     print('output test_result shape:', test_result.shape)
 
-    plt.plot(truth, color="blue")
-    plt.plot(test_result, color="red")
+    # plt.plot(truth, color="blue")
+    # plt.plot(test_result, color="red")
 
 
     # plt.plot(test_result - truth, color="green")
@@ -88,49 +88,50 @@ def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scale
     # test_result = torch.cat((test_result[0], test_result), 0)
     print("loss shape: ", (test_result - truth).shape)
 
+    resp_json['rebuild_data'] = test_result.tolist()
+    resp_json['loss'] = (test_result - truth).tolist()
+    # figure (not for deployment)
+    # for i in range(0, test_result.shape[-1]):
 
-    # figure
-    for i in range(0, test_result.shape[-1]):
-        plt.figure(figsize=(20, 10))
+    #     plt.figure(figsize=(20, 10))
+    #     plt.plot(truth[:, i], color="blue")
+    #     plt.plot(test_result[:, i], color="red")
+    #     # plt.plot(labels, color="yellow")
+    #     # plt.plot(test_result[:, i] - truth[:, i], color="black")
+    #
+    #     plt.grid(True, which='both')
+    #     plt.axhline(y=0, color='k')
+    #     # plt.xticks(ticks=range(len(truth)), labels=timestamp.values[:len(truth)], rotation=90)
+    #
+    #     if not os.path.exists("graph"):
+    #         os.mkdir("graph")
+    #     # plt.savefig('graph/transformer-epoch%d_%s_%s.png' % (epoch, dim, model_type))
+    #     plt.savefig('graph/transformer-epoch%d_%s_%s.png' % (epoch, i + 1, model_type))
+    #     plt.close()
 
-        plt.plot(truth[:, i], color="blue")
-        plt.plot(test_result[:, i], color="red")
-        # plt.plot(labels, color="yellow")
-        # plt.plot(test_result[:, i] - truth[:, i], color="black")
-
-        plt.grid(True, which='both')
-        plt.axhline(y=0, color='k')
-        # plt.xticks(ticks=range(len(truth)), labels=timestamp.values[:len(truth)], rotation=90)
-
-        if not os.path.exists("graph"):
-            os.mkdir("graph")
-        # plt.savefig('graph/transformer-epoch%d_%s_%s.png' % (epoch, dim, model_type))
-        plt.savefig('graph/transformer-epoch%d_%s_%s.png' % (epoch, i + 1, model_type))
-        plt.close()
-
-    if not os.path.exists('weight'):
-        os.mkdir('weight')
-    torch.save(eval_model.state_dict(), 'weight/epoch%d_%s_%s.pth' % (epoch, dim, model_type))
+    # if not os.path.exists('weight'):
+    #     os.mkdir('weight')
+    # torch.save(eval_model.state_dict(), 'weight/epoch%d_%s_%s.pth' % (epoch, dim, model_type))
 
     # res = pd.DataFrame({"date": timestamp.values[:len(truth)], "truth": truth[:, 0], "test_result": test_result[:, 0], "loss": (test_result - truth)[:, 0]})
     # res = pd.DataFrame({"truth": truth[:, 0], "test_result": test_result[:, 0], "loss": (test_result - truth)[:, 0]})
-    if os.path.exists("res") == False:
-        os.mkdir("res")
+    # if os.path.exists("res") == False:
+    #     os.mkdir("res")
     # res_csv_path = "res/test_loss_" + str(dim) + ".csv"
     # res_csv_path = "res/test_loss_" + model_type + ".csv"
     # with open(res_csv_path, "w") as f:
     #     res.to_csv(res_csv_path)
 
-    loss_value = np.abs(test_result - truth)
+    # loss_value = np.abs(test_result - truth)
 
-    output_df = np.concatenate((truth, test_result, loss_value), axis=1)
-    output_df = pd.DataFrame(output_df)
+    # output_df = np.concatenate((truth, test_result, loss_value), axis=1)
+    # output_df = pd.DataFrame(output_df)
 
-    print('output_df shape:', output_df.shape)
+    # print('output_df shape:', output_df.shape)
     # output_df.columns = ["truth", "test_result", "loss"]
-    output_df.to_csv("res/truth_test_loss_" + model_type + ".csv", index=False)
+    # output_df.to_csv("res/truth_test_loss_" + model_type + ".csv", index=False)
     # desc_idx = loss_value.argsort()[::-1]
-    # threshold = loss_value[desc_idx[1000]]  # todo:怎么找阈值？能自适应吗？统计方法？要好好想想
+    # threshold = loss_value[desc_idx[1000]]
     # print('---------------------------------')
     # print("threshold: ", threshold)
     # print('---------------------------------')
@@ -162,7 +163,7 @@ def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scale
     #     exp_out.to_csv(exp_out_path, index=False)
 
 
-    return total_loss / len(data_source)
+    return total_loss / len(data_source), resp_json
 
 
 def cal_precision(pred, label):

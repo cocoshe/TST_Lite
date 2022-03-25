@@ -26,27 +26,27 @@ from model.pure_ts import PureTransformer
 #   "epochs": 100,
 #   "batch_size": 64
 # }
-df = pd.read_csv('dataset/new_test.csv',) #header=None)
-df = np.array(df)
+df = pd.read_csv('dataset/Satimage-2.csv',header=None)
+df = np.array(df.iloc[:, :-1])
 print(df)
 res = dict()
 res['data'] = df.tolist()
-json.dump(res, open('dataset/new_test.json', 'w'))
+json.dump(res, open('dataset/Satimage-2.json', 'w'))
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--epochs', type=int, default=60, help='Number of epochs to train.')
-    parser.add_argument('--lr', type=float, default=0.1, help='Initial learning rate.')
+    parser.add_argument('--epochs', type=int, default=2, help='Number of epochs to train.')
+    parser.add_argument('--lr', type=float, default=0.001, help='Initial learning rate.')
     parser.add_argument('--nb_heads', type=int, default=8, help='Number of head attentions.')
     parser.add_argument('--dropout', type=float, default=0.1, help='Dropout rate.')
-    parser.add_argument('--input_window', type=int, default=25, help='Number of input steps.')
+    parser.add_argument('--input_window', type=int, default=10, help='Number of input steps.')
     parser.add_argument('--output_window', type=int, default=1, help='Number of prediction steps, '
                                                                      'in this model its fixed to one.')
     parser.add_argument('--batch_size', type=int, default=64, help='Number of batch_size.')
     parser.add_argument('--weight', type=str, default="weights/best_model.pth", help='Load weight path.(default: '
                                                                                      'weights/best_model.pth)')
     # parser.add_argument('--model', type=str, default='ts', help='Wanna run which model?')
-    parser.add_argument('--model', type=str, default='lstm', help='Wanna run which model?')
+    parser.add_argument('--model', type=str, default='ts', help='Wanna run which model?')
 
     parser.add_argument('--port_id', type=str, default=None, help='port_id.')
     parser.add_argument('--polution_id', type=str, default=None, help='polution_id.')
@@ -83,7 +83,7 @@ def parse_args():
 # out = transformer_model(src, tgt)
 
 
-def main_(args, data):
+def main_(args, data, resp_json):
     # input_window = 20  # number of input steps
     # output_window = 1  # number of prediction steps, in this model its fixed to one
     # batch_size = 10
@@ -122,14 +122,14 @@ def main_(args, data):
         epoch_start_time = time.time()
         train(train_data, input_window, model, optimizer, criterion, scheduler, epoch, batch_size)
 
-        if epoch % 1 == 0:
+        if epoch % 2 == 0:
             # val_loss = plot_and_loss(model, val_data, epoch, criterion, input_window, timestamp, scaler, args.dim)
-            val_loss = plot_and_loss(model, val_data, epoch, criterion, input_window, scaler, args.dim)
-            predict_future(model, val_data, 200, input_window)
-            save_path = "weights" + os.sep + "trained-for-" + str(epoch) + "-epoch.pth"
-            if not os.path.exists("weights"):
-                os.mkdir("weights")
-            torch.save(model.state_dict(), save_path)
+            val_loss, resp_json = plot_and_loss(model, val_data, epoch, criterion, input_window, scaler, args.dim, resp_json)
+            # predict_future(model, val_data, 200, input_window)
+            # save_path = "weights" + os.sep + "trained-for-" + str(epoch) + "-epoch.pth"
+            # if not os.path.exists("weights"):
+            #     os.mkdir("weights")
+            # torch.save(model.state_dict(), save_path)
         else:
             val_loss = evaluate(model, val_data, criterion, input_window)
 
@@ -138,18 +138,19 @@ def main_(args, data):
                 time.time() - epoch_start_time), val_loss))
         print('-' * 89)
 
-        if not os.path.exists('weights'):
-            os.mkdir('weights')
-
-        if val_loss < best_val_loss:
-            best_val_loss = val_loss
-            best_model = model
-            save_path = "weights" + os.sep + "best_model.pth"
-            torch.save(model.state_dict(), save_path)
-            print("save successfully")
+        # if not os.path.exists('weights'):
+        #     os.mkdir('weights')
+        #
+        # if val_loss < best_val_loss:
+        #     best_val_loss = val_loss
+        #     best_model = model
+        #     save_path = "weights" + os.sep + "best_model.pth"
+        #     torch.save(model.state_dict(), save_path)
+        #     print("save successfully")
 
         scheduler.step()
 
+    return resp_json
     # src = torch.rand(input_window, batch_size, 1) # (source sequence length,batch size,feature number)
     # out = model(src)
     #

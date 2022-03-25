@@ -22,15 +22,14 @@ def self_check():
     data = request.get_data()
     data = json.loads(data)
     data = data['data']
-    print(data)
     data = pd.DataFrame(data)
+    # print(data)
     print('data\n', data)
-
-    main_(args, data)
+    resp_json = dict()
+    resp_json = main_(args, data, resp_json)
     # resp_json = run_self_check(data)
-    resp_json = {'status': 'ok'}
     return resp_json
 
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5001, debug=True)
+    app.run(host='0.0.0.0', port=5001, debug=True)
