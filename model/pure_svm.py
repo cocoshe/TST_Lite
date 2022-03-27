@@ -6,11 +6,6 @@ from sklearn.metrics import accuracy_score, recall_score, precision_score
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
 from sklearn.metrics import roc_auc_score
-from sklearn.metrics import roc_curve
-from sklearn.metrics import auc
-import matplotlib.pyplot as plt
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import RandomizedSearchCV
 
 
@@ -19,11 +14,11 @@ train_features = df_train.iloc[:, :-1].values
 train_labels = df_train.iloc[:, -1].values
 
 
-df = pd.read_csv('../dataset/mammography_label.csv')
+df = pd.read_csv('../dataset/Satimage-2.csv', header=None)
 features = df.iloc[:, :-1].values
 labels = df.iloc[:, -1].values
 
-x_train, x_test, y_train, y_test = train_test_split(features, labels, test_size=0.5, random_state=123)
+x_train, x_test, y_train, y_test = train_test_split(features, labels, test_size=0.3, random_state=123)
 # rbf核函数，设置数据权重
 svc = SVC(kernel='rbf', class_weight='balanced', )
 c_range = np.logspace(-5, 15, 11, base=2)
@@ -63,7 +58,7 @@ print('roc_auc_score：', roc_auc_score(y_test, pred))
 
 df_compare = pd.DataFrame({'labels': y_test, 'pred': pred})
 df_compare.to_csv('pure_svm.csv', index=False)
-cls_report_df = pd.DataFrame(cls_report.split('\n')[:-2])
+cls_report_df = pd.DataFrame(cls_report.split('\n'))
 cls_report_df.to_csv('pure_svm_cls_report.csv', index=False)
 
 # print('精度为%s' % score)

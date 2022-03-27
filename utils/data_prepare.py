@@ -19,7 +19,7 @@ def create_inout_sequences(input_data, tw, output_window):
 
 
 # TODO(done): add input && output_window, device
-def get_data(args, input_window, output_window, device='cpu'):
+def get_data(args, input_window, output_window, device='cpu', data=None):
     # construct a littel toy dataset
     # time = np.arange(0, 400, 0.1)
     # amplitude = np.sin(time) + np.sin(time * 0.05) + np.sin(time * 0.12) * np.random.normal(-0.2, 0.2, len(time))
@@ -33,8 +33,8 @@ def get_data(args, input_window, output_window, device='cpu'):
     # series = read_csv('dataset/cpu4.csv')
     # series = read_csv('dataset/mammography_label.csv', header=None)
     # series = read_csv('dataset/Satimage-2.csv', header=None)
-    series = read_csv('dataset/sample.csv', header=None)
     # series = read_csv('dataset/all_data.csv')
+    series = data
     print('df.head():\n', series.head())
     # timestamp = series['timestamp']
     dim_name = args.dim
@@ -45,14 +45,13 @@ def get_data(args, input_window, output_window, device='cpu'):
     # series = series['value']
     print('series.shape:', series.shape)
     # print(series.iloc[:, -1].head())
-    labels = series.iloc[:, -1]
-    print(labels.head())
-    print()
-    series = series.iloc[:, :-1]
-    print('-----------------------------------------------')
-    print("series_value: ", series[:10])
-    print("series.shape: ", series.shape)
-    print('-----------------------------------------------')
+    # labels = series.iloc[:, -1]
+    # print(labels.head())
+    # series = series.iloc[:, :-1]
+    # print('-----------------------------------------------')
+    # print("series_value: ", series[:5])
+    # print("series.shape: ", series.shape)
+    # print('-----------------------------------------------')
 
 
     # looks like normalizing input values curtial for the model
@@ -78,8 +77,13 @@ def get_data(args, input_window, output_window, device='cpu'):
     test_data = create_inout_sequences(test_data, input_window, output_window)
     test_data = test_data[:-output_window]
 
+    print('====================================================')
+    print('train_sequence.shape:', train_sequence.shape)
+    print('test_data.shape:', test_data.shape)
+    print('====================================================')
+
     # return train_sequence.to(device), test_data.to(device), timestamp, scaler
-    return train_sequence.to(device), test_data.to(device), scaler, labels
+    return train_sequence.to(device), test_data.to(device), scaler
 
 
 # TODO(done): add input_window
