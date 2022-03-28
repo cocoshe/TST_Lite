@@ -8,6 +8,7 @@ from flask import Flask, request
 import flask_cors as cors
 from self_check import run_self_check
 from train import main_, parse_args
+from utils.for_overview import solve_overview, get_threshold_list
 
 app = Flask(__name__)
 cors.CORS(app)
@@ -80,7 +81,11 @@ def run():
         resp_json['date' + str(i + 1)]['date_list'] = selected_data[i].index.strftime('%d/%m/%Y').tolist()
         resp_json['date' + str(i + 1)] = main_(args, selected_data[i], resp_json['date' + str(i + 1)], meta=meta,
                                                cursor=cursor)
-    # resp_json = run_self_check(data)
+
+    # 下面是overview(总览)的整理
+    resp_json = solve_overview(resp_json, selected_data, get_threshold_list(cursor), meta)
+
+
     return resp_json
 
 
@@ -131,37 +136,7 @@ def self_check():
                                                threshold_list=threshold_list, date_list=date_list)
 
     # 下面是overview(总览)的整理
-    resp_json['overview'] = dict()
-    # 对不同指标分析增长率
-    resp_json['overview']['compare_date2_date1_of_diff_features'] = (
-            np.mean(selected_data[1].iloc[:, 1:].values.astype(float), axis=0) - np.mean(
-        selected_data[0].iloc[:, 1:].values.astype(float), axis=0)).tolist()
-
-    # 防止除0
-    resp_json['overview']['compare_date2_date1_rate_of_diff_features'] = ((np.mean(
-        selected_data[1].iloc[:, 1:].values.astype(float), axis=0) - np.mean(
-        selected_data[0].iloc[:, 1:].values.astype(float), axis=0)) / (np.mean(
-        selected_data[0].iloc[:, 1:].values.astype(float) +
-        np.random.rand(selected_data[0].iloc[:, 1:].values.shape[0], selected_data[0].iloc[:, 1:].values.shape[1]),
-        axis=0))).tolist()
-    # 分析异常数量的增长率(做对比)
-    resp_json['overview']['date1_warning_count_of_diff_features'] = np.sum(
-        selected_data[0].iloc[:, 1:].values.astype(float) - resp_json['date1']['rebuild_data'] > threshold_list,
-        axis=0).tolist()
-    resp_json['overview']['date2_warning_count_of_diff_features'] = np.sum(
-        selected_data[1].iloc[:, 1:].values.astype(float) - resp_json['date2']['rebuild_data'] > threshold_list,
-        axis=0).tolist()
-    resp_json['overview']['compare_date2_date1_count_of_diff_features'] = (
-            np.array(resp_json['overview']['date2_warning_count_of_diff_features']) - np.array(
-        resp_json['overview']['date1_warning_count_of_diff_features'])).tolist()
-    # zero_bool = resp_json['overview']['date1_warning_count_of_diff_features'] == 0
-    # print('='*20)
-    # print(selected_data[0].iloc[:, 1:].values.astype(float), resp_json['date1']['rebuild_data'])
-    # print(selected_data[1].iloc[:, 1:].values.astype(float), resp_json['date2']['rebuild_data'])
-    # print('threshold_list: ', threshold_list)
-    # print(resp_json['overview']['date1_warning_count_of_diff_features'])
-    # print(resp_json['overview']['date2_warning_count_of_diff_features'])
-    # print('='*20)
+    resp_json = solve_overview(resp_json, selected_data, threshold_list, meta)
 
     return resp_json
 
