@@ -68,6 +68,9 @@ def run():
     print('selected_df: ', selected_df_period1_data)
     for i in range(len(date_select) // 2):
         resp_json['date' + str(i + 1)] = dict()
+        if selected_data[i].empty:
+            resp_json['date' + str(i + 1)] = []
+            continue
         resp_json['date' + str(i + 1)]['date_list'] = selected_data[i].index.strftime('%d/%m/%Y').tolist()
         resp_json['date' + str(i + 1)] = main_(args, selected_data[i] + np.random.rand(selected_data[i].shape[0], selected_data[i].shape[1]), resp_json['date' + str(i + 1)], cursor)
     # resp_json = run_self_check(data)

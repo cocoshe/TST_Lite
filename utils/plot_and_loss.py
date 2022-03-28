@@ -89,12 +89,19 @@ def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scale
 
     resp_json['rebuild_data'] = test_result.tolist()
     loss = (test_result - truth).tolist()
-    # todo: compare with threshold
+    # compare with threshold
     sql = "SELECT threshold FROM threshold"
-    threshold = cursor.execute(sql)
+    cursor.execute(sql)
+    threshold = np.array(cursor.fetchall())[:, 0]
     print('threshold:', threshold)
+    loss = np.array(loss)
+    abnormal = threshold - loss
+    maybe = np.min(abnormal, axis=1)
+    maybe_idx = np.where(maybe < 0)[0]
+    date_list = resp_json['date_list']
+    abnormal_date = [date_list[i] for i in maybe_idx]
+    resp_json['abnormal_date'] = abnormal_date  # 记录异常日期
 
-    abnormal_dates = []
     # min_loss = np.min(loss, axis=0)
     # max_loss = np.max(loss, axis=0)
     # loss_norm = (loss - min_loss) / (max_loss - min_loss)
