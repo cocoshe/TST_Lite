@@ -13,8 +13,8 @@ from sklearn.model_selection import train_test_split, RandomizedSearchCV
 # import wandb
 
 
-# def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, timestamp, scaler, dim, threshold=None):
-def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scaler, dim, resp_json, cursor=None):
+def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scaler, dim,
+                  resp_json, meta, cursor=None, threshold_list=None, date_list_=None):
     model_type = eval_model.model_type
     eval_model.eval()
 
@@ -90,15 +90,23 @@ def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scale
     resp_json['rebuild_data'] = test_result.tolist()
     loss = (test_result - truth).tolist()
     # compare with threshold
-    sql = "SELECT threshold FROM threshold"
-    cursor.execute(sql)
-    threshold = np.array(cursor.fetchall())[:, 0]
-    print('threshold:', threshold)
+    if meta == 'run':
+        sql = "SELECT threshold FROM threshold"
+        cursor.execute(sql)
+        threshold = np.array(cursor.fetchall())[:, 0]
+        print('threshold:', threshold)
+        date_list = resp_json['date_list']
+    else:  # meta == 'selfcheck
+        threshold = threshold_list
+        date_list = resp_json['date_list']
     loss = np.array(loss)
     abnormal = threshold - loss
     maybe = np.min(abnormal, axis=1)
     maybe_idx = np.where(maybe < 0)[0]
-    date_list = resp_json['date_list']
+    # print('---------------------------------')
+    # print('date_list: ', date_list)
+    # print('maybe_idx: ', maybe_idx)
+    # print('---------------------------------')
     abnormal_date = [date_list[i] for i in maybe_idx]
     resp_json['abnormal_date'] = abnormal_date  # 记录异常日期
 

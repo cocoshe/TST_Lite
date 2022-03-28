@@ -86,7 +86,7 @@ def parse_args():
 # out = transformer_model(src, tgt)
 
 
-def main_(args, data, resp_json, cursor=None):
+def main_(args, data, resp_json, meta, cursor=None, threshold_list=None, date_list=None):
     input_window = args.input_window
     output_window = args.output_window
     batch_size = args.batch_size
@@ -94,6 +94,7 @@ def main_(args, data, resp_json, cursor=None):
     lr = args.lr
     choice_model = args.model
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 
     # train_data, val_data, timestamp, scaler = get_data(args, input_window, output_window, device=device)
     # train_data, val_data, scaler, labels = get_data(args, input_window, output_window, device=device, data=data)
@@ -125,7 +126,7 @@ def main_(args, data, resp_json, cursor=None):
         if epoch % 2 == 0:
             # val_loss = plot_and_loss(model, val_data, epoch, criterion, input_window, timestamp, scaler, args.dim)
             val_loss, resp_json = plot_and_loss(model, val_data, epoch, criterion, input_window, scaler, args.dim,
-                                                resp_json, cursor)
+                                                resp_json, meta, cursor, threshold_list=threshold_list, date_list_=date_list)
             # predict_future(model, val_data, 200, input_window)
             # save_path = "weights" + os.sep + "trained-for-" + str(epoch) + "-epoch.pth"
             # if not os.path.exists("weights"):

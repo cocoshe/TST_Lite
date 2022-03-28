@@ -18,7 +18,8 @@ def ping():
     return 'pong'
 
 
-df_all = pd.read_csv('dataset/re_data.csv', dtype={'company_id': str, 'port_id': str, 'polution_id': str,}).sort_values(by='timestamp')
+df_all = pd.read_csv('dataset/re_data.csv',
+                     dtype={'company_id': str, 'port_id': str, 'polution_id': str, }).sort_values(by='timestamp')
 print('types: ', df_all.dtypes)
 df_all['timestamp'] = pd.to_datetime(df_all['timestamp'], format='%d/%m/%Y %H:%M:%S')
 
@@ -31,6 +32,7 @@ cursor = db.cursor()
 def run():
     if request.method != 'POST':
         return 'wrong request method'
+    meta = 'run'
     args = parse_args()
     data = request.get_data()
     data = json.loads(data)
@@ -58,8 +60,12 @@ def run():
     # print('------------------------------------------------')
     # print(df_all[(df_all['timestamp'] >= date_s_1) & (df_all['timestamp'] <= date_e_1) & (df_all['port_id'] == port_id)])
     # print(df_all[(df_all['timestamp'] >= date_s_2) & (df_all['timestamp'] <= date_e_2) & (df_all['port_id'] == port_id)])
-    selected_df_period1_data = df_all[(df_all['timestamp'] >= date_s_1) & (df_all['timestamp'] <= date_e_1) & (df_all['port_id'] == port_id) & (df_all['company_id'] == company_id)].iloc[:, 2:].groupby(['timestamp']).sum()
-    selected_df_period2_data = df_all[(df_all['timestamp'] >= date_s_2) & (df_all['timestamp'] <= date_e_2) & (df_all['port_id'] == port_id) & (df_all['company_id'] == company_id)].iloc[:, 2:].groupby(['timestamp']).sum()
+    selected_df_period1_data = df_all[(df_all['timestamp'] >= date_s_1) & (df_all['timestamp'] <= date_e_1) &
+                                      (df_all['port_id'] == port_id) & (df_all['company_id'] == company_id)].iloc[:,
+                               2:].groupby(['timestamp']).sum()
+    selected_df_period2_data = df_all[(df_all['timestamp'] >= date_s_2) & (df_all['timestamp'] <= date_e_2) &
+                                      (df_all['port_id'] == port_id) & (df_all['company_id'] == company_id)].iloc[:,
+                               2:].groupby(['timestamp']).sum()
     selected_data = [selected_df_period1_data, selected_df_period2_data]
 
     print('------------------------------------------------')
@@ -72,7 +78,8 @@ def run():
             resp_json['date' + str(i + 1)] = []
             continue
         resp_json['date' + str(i + 1)]['date_list'] = selected_data[i].index.strftime('%d/%m/%Y').tolist()
-        resp_json['date' + str(i + 1)] = main_(args, selected_data[i] + np.random.rand(selected_data[i].shape[0], selected_data[i].shape[1]), resp_json['date' + str(i + 1)], cursor)
+        resp_json['date' + str(i + 1)] = main_(args, selected_data[i], resp_json['date' + str(i + 1)], meta=meta,
+                                               cursor=cursor)
     # resp_json = run_self_check(data)
     return resp_json
 
@@ -81,16 +88,81 @@ def run():
 def self_check():
     if request.method != 'POST':
         return 'wrong request method'
+    meta = 'selfcheck'
     args = parse_args()
     data = request.get_data()
     data = json.loads(data)
-    data = data['data']
-    data = pd.DataFrame(data)
+
+    date_s_1 = pd.to_datetime(data['date_s_1'], format='%d/%m/%Y')
+    date_e_1 = pd.to_datetime(data['date_e_1'], format='%d/%m/%Y')
+    date_s_2 = pd.to_datetime(data['date_s_2'], format='%d/%m/%Y')
+    date_e_2 = pd.to_datetime(data['date_e_2'], format='%d/%m/%Y')
+
+    data = pd.DataFrame(data['data'])
+    data.iloc[1:, 0] = pd.to_datetime(data.iloc[1:, 0], format='%d/%m/%Y')
+    # print(data.iloc[1:, 0].dtype)
+    # print(date_s_1.dtype)
+    selected_df_period1_data = data.iloc[1:, :][(data.iloc[1:, 0] >= date_s_1) & (data.iloc[1:, 0] <= date_e_1)]
+    selected_df_period2_data = data.iloc[1:, :][(data.iloc[1:, 0] >= date_s_2) & (data.iloc[1:, 0] <= date_e_2)]
+    selected_data = [selected_df_period1_data, selected_df_period2_data]
+
     # print(data)
     print('data\n', data)
     resp_json = dict()
-    resp_json = main_(args, data, resp_json)
-    # resp_json = run_self_check(data)
+    threshold_list = np.array(data.iloc[0, 1:]).astype(float)  # 取第一行的数据，去掉第一列的时间
+    date_list = pd.to_datetime(data.iloc[1:, 0].values).strftime('%Y-%m-%d')  # 取第一列的数据，去掉第一行的时间]
+
+    # data = data.iloc[1:, 1:]
+
+    for i in range(2):
+        resp_json['date' + str(i + 1)] = dict()
+        if selected_data[i].empty:
+            resp_json['date' + str(i + 1)] = []
+            continue
+
+        if len(pd.to_datetime(selected_data[i].iloc[:, 0].values).strftime('%Y-%m-%d').tolist()) < 7:
+            return {
+                'error': 'too less exist date',
+            }
+        resp_json['date' + str(i + 1)]['date_list'] = pd.to_datetime(selected_data[i].iloc[:, 0].values).strftime(
+            '%Y-%m-%d').tolist()
+        resp_json['date' + str(i + 1)] = main_(args, selected_data[i].iloc[:, 1:], resp_json['date' + str(i + 1)],
+                                               meta=meta,
+                                               threshold_list=threshold_list, date_list=date_list)
+
+    # 下面是overview(总览)的整理
+    resp_json['overview'] = dict()
+    # 对不同指标分析增长率
+    resp_json['overview']['compare_date2_date1_of_diff_features'] = (
+            np.mean(selected_data[1].iloc[:, 1:].values.astype(float), axis=0) - np.mean(
+        selected_data[0].iloc[:, 1:].values.astype(float), axis=0)).tolist()
+
+    # 防止除0
+    resp_json['overview']['compare_date2_date1_rate_of_diff_features'] = ((np.mean(
+        selected_data[1].iloc[:, 1:].values.astype(float), axis=0) - np.mean(
+        selected_data[0].iloc[:, 1:].values.astype(float), axis=0)) / (np.mean(
+        selected_data[0].iloc[:, 1:].values.astype(float) +
+        np.random.rand(selected_data[0].iloc[:, 1:].values.shape[0], selected_data[0].iloc[:, 1:].values.shape[1]),
+        axis=0))).tolist()
+    # 分析异常数量的增长率(做对比)
+    resp_json['overview']['date1_warning_count_of_diff_features'] = np.sum(
+        selected_data[0].iloc[:, 1:].values.astype(float) - resp_json['date1']['rebuild_data'] > threshold_list,
+        axis=0).tolist()
+    resp_json['overview']['date2_warning_count_of_diff_features'] = np.sum(
+        selected_data[1].iloc[:, 1:].values.astype(float) - resp_json['date2']['rebuild_data'] > threshold_list,
+        axis=0).tolist()
+    resp_json['overview']['compare_date2_date1_count_of_diff_features'] = (
+            np.array(resp_json['overview']['date2_warning_count_of_diff_features']) - np.array(
+        resp_json['overview']['date1_warning_count_of_diff_features'])).tolist()
+    # zero_bool = resp_json['overview']['date1_warning_count_of_diff_features'] == 0
+    # print('='*20)
+    # print(selected_data[0].iloc[:, 1:].values.astype(float), resp_json['date1']['rebuild_data'])
+    # print(selected_data[1].iloc[:, 1:].values.astype(float), resp_json['date2']['rebuild_data'])
+    # print('threshold_list: ', threshold_list)
+    # print(resp_json['overview']['date1_warning_count_of_diff_features'])
+    # print(resp_json['overview']['date2_warning_count_of_diff_features'])
+    # print('='*20)
+
     return resp_json
 
 
