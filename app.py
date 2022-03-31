@@ -21,7 +21,7 @@ def ping():
 
 df_all = pd.read_csv('dataset/re_data.csv',
                      dtype={'company_id': str, 'port_id': str, 'polution_id': str, }).sort_values(by='timestamp')
-print('types: ', df_all.dtypes)
+# print('types: ', df_all.dtypes)
 df_all['timestamp'] = pd.to_datetime(df_all['timestamp'], format='%d/%m/%Y %H:%M:%S')
 
 # db
