@@ -25,14 +25,16 @@ df_all = pd.read_csv('dataset/re_data.csv',
 df_all['timestamp'] = pd.to_datetime(df_all['timestamp'], format='%d/%m/%Y %H:%M:%S')
 
 # db
-db = pymysql.Connect(host='localhost', port=3306, user='root', passwd='123123', db='yuheng', charset='utf8')
-cursor = db.cursor()
+# db = pymysql.Connect(host='localhost', port=3306, user='root', passwd='123123', db='yuheng', charset='utf8')
+# cursor = db.cursor()
 
 
 @app.route('/run', methods=['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS', 'HEAD'])
 def run():
     if request.method != 'POST':
         return 'wrong request method'
+    db = pymysql.Connect(host='localhost', port=3306, user='root', passwd='123123', db='yuheng', charset='utf8')
+    cursor = db.cursor()
     meta = 'run'
     args = parse_args()
     data = request.get_data()
