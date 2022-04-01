@@ -99,6 +99,9 @@ def main_(args, data, resp_json, meta, cursor=None, threshold_list=None, date_li
     # train_data, val_data, timestamp, scaler = get_data(args, input_window, output_window, device=device)
     # train_data, val_data, scaler, labels = get_data(args, input_window, output_window, device=device, data=data)
     train_data, val_data, scaler = get_data(args, input_window, output_window, device=device, data=data)
+    print("----------------------------------------------------------")
+    print("train_data.shape:", train_data.shape)
+    print("----------------------------------------------------------")
     if choice_model == 'ts':
         model = TransAm(feature_size=train_data.shape[-1]).to(device)
     elif choice_model == 'lstm':

@@ -18,25 +18,53 @@ def solve_overview(resp_json, selected_data, threshold_list, meta):
         axis=0))).tolist()
     # 分析异常数量的增长率(做对比)
     if meta == 'selfcheck':
-        resp_json['overview']['date1_warning_count_of_diff_features'] = np.sum(
-            selected_data[0].iloc[:, 1:].values.astype(float) - resp_json['date1']['rebuild_data'] > threshold_list,
-            axis=0).tolist()
-        resp_json['overview']['date2_warning_count_of_diff_features'] = np.sum(
-            selected_data[1].iloc[:, 1:].values.astype(float) - resp_json['date2']['rebuild_data'] > threshold_list,
-            axis=0).tolist()
-        resp_json['overview']['compare_date2_date1_count_of_diff_features'] = (
-                np.array(resp_json['overview']['date2_warning_count_of_diff_features']) - np.array(
-            resp_json['overview']['date1_warning_count_of_diff_features'])).tolist()
-    else: # meta == 'run'
-        resp_json['overview']['date1_warning_count_of_diff_features'] = np.sum(
-            selected_data[0].iloc[:, :].values.astype(float) - resp_json['date1']['rebuild_data'] > threshold_list,
-            axis=0).tolist()
-        resp_json['overview']['date2_warning_count_of_diff_features'] = np.sum(
-            selected_data[1].iloc[:, :].values.astype(float) - resp_json['date2']['rebuild_data'] > threshold_list,
-            axis=0).tolist()
-        resp_json['overview']['compare_date2_date1_count_of_diff_features'] = (
-                np.array(resp_json['overview']['date2_warning_count_of_diff_features']) - np.array(
-            resp_json['overview']['date1_warning_count_of_diff_features'])).tolist()
+        if resp_json['date1']:
+            resp_json['overview']['date1_warning_count_of_diff_features'] = np.sum(
+                selected_data[0].iloc[:, 1:].values.astype(float) - resp_json['date1']['rebuild_data'] > threshold_list,
+                axis=0).tolist()
+        else:
+            resp_json['overview']['date1_warning_count_of_diff_features'] = []
+        if resp_json['date2']:
+            resp_json['overview']['date2_warning_count_of_diff_features'] = np.sum(
+                selected_data[1].iloc[:, 1:].values.astype(float) - resp_json['date2']['rebuild_data'] > threshold_list,
+                axis=0).tolist()
+        else:
+            resp_json['overview']['date2_warning_count_of_diff_features'] = []
+        if resp_json['date1'] and resp_json['date2']:
+            resp_json['overview']['compare_date2_date1_count_of_diff_features'] = (
+                    np.array(resp_json['overview']['date2_warning_count_of_diff_features']) - np.array(
+                resp_json['overview']['date1_warning_count_of_diff_features'])).tolist()
+        else:
+            resp_json['overview']['compare_date2_date1_count_of_diff_features'] = []
+            print('date1 or date2 is None')
+    else:  # meta == 'run'
+        # print("------------------------------------------------------")
+        # print(selected_data[0].iloc[:, :].values.astype(float))
+        # print("date1: ", resp_json['date1'])
+        # print(resp_json['date1']['rebuild_data'])
+        # print("------------------------------------------------------")
+        if resp_json['date1']:
+            resp_json['overview']['date1_warning_count_of_diff_features'] = np.sum(
+                selected_data[0].iloc[:, :].values.astype(float) - resp_json['date1']['rebuild_data'] > threshold_list,
+                axis=0).tolist()
+        else:
+            resp_json['overview']['date1_warning_count_of_diff_features'] = []
+
+        if resp_json['date2']:
+            resp_json['overview']['date2_warning_count_of_diff_features'] = np.sum(
+                selected_data[1].iloc[:, :].values.astype(float) - resp_json['date2']['rebuild_data'] > threshold_list,
+                axis=0).tolist()
+        else:
+            resp_json['overview']['date2_warning_count_of_diff_features'] = []
+
+        if resp_json['overview']['date2_warning_count_of_diff_features'] and resp_json['overview'][
+            'date1_warning_count_of_diff_features']:
+            resp_json['overview']['compare_date2_date1_count_of_diff_features'] = (
+                    np.array(resp_json['overview']['date2_warning_count_of_diff_features']) - np.array(
+                resp_json['overview']['date1_warning_count_of_diff_features'])).tolist()
+        else:
+            resp_json['overview']['compare_date2_date1_count_of_diff_features'] = []
+            print("Warning: no data in date2 or date1")
     return resp_json
 
 

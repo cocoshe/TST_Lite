@@ -14,7 +14,7 @@ class TransAm(nn.Module):
             feature_size = 250
             output_size = 1
         # self.fc = nn.Linear(input_dim, hidden_layer)
-        self.pos_encoder = PositionalEncoding(feature_size)
+        # self.pos_encoder = PositionalEncoding(feature_size)
 
         # self.encoder_linear = nn.Linear(feature_size, hidden_size)
         # self.encoder_relu = nn.ReLU()
@@ -44,8 +44,8 @@ class TransAm(nn.Module):
             mask = self._generate_square_subsequent_mask(len(src)).to(device)
             self.src_mask = mask
 
-
-        src = self.pos_encoder(src)
+        # print("before pe: ", src.shape)
+        # src = self.pos_encoder(src)
         # src = self.encoder_linear(src)
         # src = self.encoder_relu(src)
         output = self.transformer_encoder(src, self.src_mask)  # , self.src_mask)
@@ -59,5 +59,3 @@ class TransAm(nn.Module):
         mask = (torch.triu(torch.ones(sz, sz)) == 1).transpose(0, 1)
         mask = mask.float().masked_fill(mask == 0, float('-inf')).masked_fill(mask == 1, float(0.0))
         return mask
-
-
