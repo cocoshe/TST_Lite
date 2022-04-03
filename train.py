@@ -6,7 +6,7 @@ import torch
 import torch.nn as nn
 import argparse
 from utils.data_prepare import get_data
-from model.Transformer import TransAm
+from model.Transformer import TST_Lite
 from utils.train import train
 from utils.plot_and_loss import plot_and_loss
 from utils.eval import evaluate
@@ -54,7 +54,7 @@ def main_(args, data, resp_json, meta, cursor=None, threshold_list=None, date_li
     print("train_data.shape:", train_data.shape)
     print("----------------------------------------------------------")
     if choice_model == 'ts':
-        model = TransAm(feature_size=train_data.shape[-1]).to(device)
+        model = TST_Lite(feature_size=train_data.shape[-1]).to(device)
     print('model_type: ', model.model_type)
     criterion = nn.MSELoss()
 

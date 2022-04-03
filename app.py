@@ -22,12 +22,11 @@ df_all = pd.read_csv('dataset/re_data.csv',
 df_all['timestamp'] = pd.to_datetime(df_all['timestamp'], format='%d/%m/%Y %H:%M:%S')
 
 
-
 @app.route('/api/v1/run', methods=['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS', 'HEAD'])
 def run():
     if request.method != 'POST':
         return 'wrong request method'
-    db = pymysql.Connect(host='47.96.116.167', port=3306, user='root', passwd='123123', db='yuheng', charset='utf8')
+    db = pymysql.Connect(host='server_ip', port=3306, user='root', passwd='password', db='yuheng', charset='utf8')
     cursor = db.cursor()
     meta = 'run'
     args = parse_args()
@@ -87,11 +86,10 @@ def self_check():
     selected_df_period2_data = data.iloc[1:, :][(data.iloc[1:, 0] >= date_s_2) & (data.iloc[1:, 0] <= date_e_2)]
     selected_data = [selected_df_period1_data, selected_df_period2_data]
 
-    print('data\n', data)
+    # print('data\n', data)
     resp_json = dict()
     threshold_list = np.array(data.iloc[0, 1:]).astype(float)  # 取第一行的数据，去掉第一列的时间
     date_list = pd.to_datetime(data.iloc[1:, 0].values).strftime('%Y-%m-%d')  # 取第一列的数据，去掉第一行的时间
-
 
     for i in range(2):
         resp_json['date' + str(i + 1)] = dict()

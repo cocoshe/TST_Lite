@@ -3,11 +3,10 @@ import torch.nn as nn
 from model.PositionalEncoding import PositionalEncoding
 
 
-# todo: adjust features for multi-dimensional input
-class TransAm(nn.Module):
+class TST_Lite(nn.Module):
     def __init__(self, feature_size=250, hidden_size=128, num_layers=1, dropout=0.1):
-        super(TransAm, self).__init__()
-        self.model_type = 'Transformer'
+        super(TST_Lite, self).__init__()
+        self.model_type = 'tst_lite'
         output_size = feature_size
         self.src_mask = None
         if feature_size == 1:

@@ -6,7 +6,7 @@ from sklearn.preprocessing import MinMaxScaler
 import pandas as pd
 import torch.nn as nn
 import torch
-from model.Transformer import TransAm
+from model.Transformer import TST_Lite
 
 from utils.data_prepare import get_data, create_inout_sequences, get_batch
 
@@ -15,7 +15,7 @@ def run_self_check(data):
     df = pd.DataFrame(data)
     print(df.head())
 
-    model = TransAm()
+    model = TST_Lite()
     print(model)
 
     resp_json = reconstruct(model, data)
@@ -70,16 +70,7 @@ def reconstruct(model, data):
         truth = scaler.inverse_transform(truth)
         test_result = scaler.inverse_transform(test_result)
 
-    print('output truth shape:', truth.shape)
-    print('output test_result shape:', test_result.shape)
-
-    print('---------------------------------')
-    print('test_result[0].shape, type', test_result[0].shape, test_result[0].dtype)
-    print('test_result.shape, type', test_result.shape, test_result.dtype)
     # test_result = torch.cat((test_result[0], test_result), 0)
-    print("loss shape: ", (test_result - truth).shape)
-    print('---------------------------------')
-
 
     json_resp = dict()
     json_resp['test_result'] = test_result.T.tolist()
@@ -88,21 +79,20 @@ def reconstruct(model, data):
     # plt.plot(truth, color="blue")
     # plt.plot(test_result, color="red")
 
-
-    for i in range(0, test_result.shape[-1]):
-        plt.figure(figsize=(20, 10))
-
-        plt.plot(truth[:, i], color="blue")
-        plt.plot(test_result[:, i], color="red")
-        plt.plot(test_result[:, i] - truth[:, i], color="green")
-
-        plt.grid(True, which='both')
-        plt.axhline(y=0, color='k')
-        # plt.xticks(ticks=range(len(truth)), labels=timestamp.values[:len(truth)], rotation=90)
-
-        if not os.path.exists("vis"):
-            os.mkdir("vis")
-        plt.savefig('vis/%s_%s.png' % (model_type, i + 1))
-        plt.close()
+    # for i in range(0, test_result.shape[-1]):
+    #     plt.figure(figsize=(20, 10))
+    #
+    #     plt.plot(truth[:, i], color="blue")
+    #     plt.plot(test_result[:, i], color="red")
+    #     plt.plot(test_result[:, i] - truth[:, i], color="green")
+    #
+    #     plt.grid(True, which='both')
+    #     plt.axhline(y=0, color='k')
+    #     # plt.xticks(ticks=range(len(truth)), labels=timestamp.values[:len(truth)], rotation=90)
+    #
+    #     if not os.path.exists("vis"):
+    #         os.mkdir("vis")
+    #     plt.savefig('vis/%s_%s.png' % (model_type, i + 1))
+    #     plt.close()
 
     return json_resp
