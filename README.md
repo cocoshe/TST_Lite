@@ -28,7 +28,9 @@ pip install -r requirements.txt
 python app.py
 ```
 
-
-
+## Docker
+```shell
+docker run -it -d -p 5001:5001 --name tst-lite cocoshe/ts:api
+```
 
 

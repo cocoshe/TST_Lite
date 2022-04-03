@@ -6,7 +6,7 @@ import torch
 import torch.nn as nn
 import argparse
 from utils.data_prepare import get_data
-from model.Transformer import TST_Lite
+from model.tst_lite import TST_Lite
 from utils.train import train
 from utils.plot_and_loss import plot_and_loss
 from utils.eval import evaluate

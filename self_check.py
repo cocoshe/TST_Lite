@@ -6,7 +6,7 @@ from sklearn.preprocessing import MinMaxScaler
 import pandas as pd
 import torch.nn as nn
 import torch
-from model.Transformer import TST_Lite
+from model.tst_lite import TST_Lite
 
 from utils.data_prepare import get_data, create_inout_sequences, get_batch
 
