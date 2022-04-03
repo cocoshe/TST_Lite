@@ -4,7 +4,7 @@ graph
 adjust_res_check.py
 dataset
 sql_test.py
-data_prepare_test.ipynb
+utils/data_prepare_test.ipynb
 wandb
 __pycache__
 graphss

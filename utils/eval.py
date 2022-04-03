@@ -2,7 +2,6 @@ import torch
 from utils.data_prepare import get_batch
 
 
-# TODO(done): add criterion
 def evaluate(eval_model, data_source, criterion, input_window):
     eval_model.eval()  # Turn on the evaluation mode
     total_loss = 0.

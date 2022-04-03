@@ -1,30 +1,33 @@
-# Time_series_anomaly_detection
+# TST-Lite for Anomaly Detection
 
-Based on construction Of time series
+
+TST-Lite 🚀 is a better and more efficient way to detect anomalies in time series data with Attention-based Learning.
+
 
 ## Architecture
 
-
+![Architecture of TST-Lite.png](asset/img.png)
 
 ## Quick Start
 
-1. first, run the following command to install some essential independence
-```
-sh ./install.sh
-```
-
-2. run `train.py` with default config
-```
-python3 ./train.py
-```
-
+1. first, run the following command to generate `requirements.txt`
 ```shell
-# generate requirements.txt
 pipreqs ./ --encoding=utf8 --force
-
 ```
 
-## Log
+
+2. install essential packages
+```shell
+pip install -r requirements.txt
+```
+
+3. change the config for your environment
+
+4. run the `app.py`
+```shell
+python app.py
+```
+
 
 
 

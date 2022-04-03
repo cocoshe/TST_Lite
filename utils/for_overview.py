@@ -38,11 +38,6 @@ def solve_overview(resp_json, selected_data, threshold_list, meta):
             resp_json['overview']['compare_date2_date1_count_of_diff_features'] = []
             print('date1 or date2 is None')
     else:  # meta == 'run'
-        # print("------------------------------------------------------")
-        # print(selected_data[0].iloc[:, :].values.astype(float))
-        # print("date1: ", resp_json['date1'])
-        # print(resp_json['date1']['rebuild_data'])
-        # print("------------------------------------------------------")
         if resp_json['date1']:
             resp_json['overview']['date1_warning_count_of_diff_features'] = np.sum(
                 selected_data[0].iloc[:, :].values.astype(float) - resp_json['date1']['rebuild_data'] > threshold_list,

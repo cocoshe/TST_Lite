@@ -88,6 +88,7 @@ def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scale
     print("loss shape: ", (test_result - truth).shape)
 
     resp_json['rebuild_data'] = test_result.tolist()
+    resp_json['truth'] = truth.tolist()
     loss = (test_result - truth).tolist()
     # compare with threshold
     if meta == 'run':
@@ -135,9 +136,9 @@ def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scale
     #     plt.savefig('graphss/transformer-epoch%d_%s_%s.png' % (epoch, i + 1, model_type))
     #     plt.close()
 
-    if not os.path.exists('weightss'):
-        os.mkdir('weightss')
-    torch.save(eval_model.state_dict(), 'weightss/epoch%d_%s_%s.pth' % (epoch, dim, model_type))
+    # if not os.path.exists('weightss'):
+    #     os.mkdir('weightss')
+    # torch.save(eval_model.state_dict(), 'weightss/epoch%d_%s_%s.pth' % (epoch, dim, model_type))
 
     # res = pd.DataFrame({"date": timestamp.values[:len(truth)], "truth": truth[:, 0], "test_result": test_result[:, 0], "loss": (test_result - truth)[:, 0]})
     # res = pd.DataFrame({"truth": truth[:, 0], "test_result": test_result[:, 0], "loss": (test_result - truth)[:, 0]})
