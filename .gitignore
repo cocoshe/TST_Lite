@@ -3,9 +3,5 @@ weights
 graph
 adjust_res_check.py
 dataset
-sql_test.py
-utils/data_prepare_test.ipynb
 wandb
-__pycache__
-graphss
-weightss
+*.csv
