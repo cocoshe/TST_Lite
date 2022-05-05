@@ -12,6 +12,8 @@ from utils.plot_and_loss import plot_and_loss
 from utils.reconstruct import predict_future
 from utils.eval import evaluate
 from model.lstm import LSTM
+from model.PCA import PCA
+from model.deep_auto_encoder import DAE
 
 
 # import wandb
@@ -27,10 +29,10 @@ from model.lstm import LSTM
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--epochs', type=int, default=100, help='Number of epochs to train.')
-    parser.add_argument('--lr', type=float, default=0.001, help='Initial learning rate.')
+    parser.add_argument('--lr', type=float, default=0.00005, help='Initial learning rate.')  # 0.001
     parser.add_argument('--nb_heads', type=int, default=8, help='Number of head attentions.')
     parser.add_argument('--dropout', type=float, default=0.1, help='Dropout rate.')
-    parser.add_argument('--input_window', type=int, default=3000, help='Number of input steps.')
+    parser.add_argument('--input_window', type=int, default=20, help='Number of input steps.')
     parser.add_argument('--output_window', type=int, default=1, help='Number of prediction steps, '
                                                                      'in this model its fixed to one.')
     parser.add_argument('--batch_size', type=int, default=64, help='Number of batch_size.')
@@ -92,6 +94,10 @@ def main(args):
         model = TransAm(feature_size=train_data.shape[-1]).to(device)
     elif choice_model == 'lstm':
         model = LSTM(input_size=train_data.shape[-1], output_size=train_data.shape[-1]).to(device)
+    elif choice_model == 'pca':
+        model = PCA(input_size=train_data.shape[-1], hidden_size=32).to(device)
+    elif choice_model == 'dae':
+        model = DAE(input_size=train_data.shape[-1], hidden_size=32).to(device)
     print('model_type: ', model.model_type)
     criterion = nn.MSELoss()
 
