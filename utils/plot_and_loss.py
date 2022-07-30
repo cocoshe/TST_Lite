@@ -97,8 +97,9 @@ def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scale
     exp_loss = mean_squared_error(test_result, truth)
     exp_loss = exp_loss.reshape(-1).sum()
 
-
-
+    # if epoch > 60:
+    #     wandb.log({'fwd': test_result, 'gt': truth, 'x': list(range(len(test_result)))})
+    #     exit()
     # wandb
     wandb.log({'epoch': epoch, "forward": test_result, "label": truth})
     wandb.log({'epoch': epoch, "MSE loss": exp_loss})
@@ -126,11 +127,14 @@ def plot_and_loss(eval_model, data_source, epoch, criterion, input_window, scale
 
     # figure
     for i in range(0, test_result.shape[-1]):
-        plt.figure(figsize=(20, 10))
+        # plt.figure(figsize=(20, 10))
 
-        plt.plot(truth[:, i], color="blue")
-        plt.plot(test_result[:, i], color="red")
+        plt.plot(truth[:, i], color="blue", linestyle='--', label='origin data')
+        plt.plot(test_result[:, i], color="red", label='reconstructed data')
+        plt.legend(loc=3)
         plt.plot(labels*100, color="yellow")
+        plt.ylabel('value')
+        plt.xlabel('sample')
 
         plt.grid(True, which='both')
         plt.axhline(y=0, color='k')
